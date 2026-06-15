@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Resonant Media Solutions</title>
+  <meta name="description" content="Marketing, Sales and Technology services that align into a single revenue system. RevOps & MarTech for B2B scale-ups.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+    h1,h2,h3,h4,.serif{font-family:'Cormorant Garamond',serif;}
+    a{text-decoration:none;color:inherit;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+    .nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+    .nav-links{display:flex;align-items:center;gap:36px;margin-left:56px;}
+    .mob-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;transition:border-color .2s,color .2s;}
+    .mob-btn:hover{border-color:var(--gold);color:var(--white);}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:9998;background:#000;flex-direction:column;}
+    .mob-overlay.open{display:flex;}
+    .mob-overlay-inner{display:flex;flex-direction:column;height:100%;padding:0 32px 40px;}
+    .mob-top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;}
+    .mob-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;line-height:1;}
+    .mob-nav{display:flex;flex-direction:column;gap:0;margin-top:8px;flex:1;overflow-y:auto;}
+    .mob-nav-link{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:color .2s;}
+    .mob-nav-link:hover,.mob-nav-link.active{color:var(--white);}
+    .mob-svc-btn{width:100%;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--white);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-align:left;}
+    .mob-svc-arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}
+    .mob-svc-sub{display:none;flex-direction:column;padding-left:16px;}
+    .mob-svc-sub.open{display:flex;}
+    .mob-svc-sub a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .2s;}
+    .mob-svc-sub a:hover,.mob-svc-sub a.active{color:var(--gold);}
+    .mob-footer{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-direction:column;gap:12px;}
+    .mob-offices{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .nav-link{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--white);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:-20px;background:rgba(0,0,0,.97);border:1px solid var(--border);min-width:220px;padding:8px 0;z-index:200;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);transition:color .15s,background .15s;}
+    .nav-dropdown-menu a:hover{color:var(--white);background:rgba(201,169,110,.06);}
+    .nav-dropdown-menu a.active{color:var(--gold);}
+    .nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:10px 22px;border-radius:1px;transition:background .2s;white-space:nowrap;}
+    .nav-cta:hover{background:var(--gl);}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-gold:hover{background:var(--gl);transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:13px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:1px solid rgba(255,255,255,0.18);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-black:hover{background:#111;transform:translateY(-1px);}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal.in{opacity:1;transform:translateY(0);}
+    .reveal-l{opacity:0;transform:translateX(-20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-l.in{opacity:1;transform:translateX(0);}
+    .reveal-r{opacity:0;transform:translateX(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-r.in{opacity:1;transform:translateX(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}.d5{transition-delay:.5s;}
+    .container{max-width:1400px;margin:0 auto;padding:0 48px;}
+    .rule-gold{width:36px;height:1px;background:var(--gold);margin-bottom:28px;}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    .s-num{font-size:10px;font-weight:400;letter-spacing:0.12em;color:var(--g2);}
+    section{padding:112px 0;}
+    /* SERVICE DEPT */
+    .dept-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:40px;}
+    .dept-num{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:-12px;}
+    .dept-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,72px);font-weight:300;color:var(--white);line-height:1.05;}
+    .dept-title em{font-style:italic;color:var(--gold);}
+    .dept-desc{font-size:14px;color:var(--g1);line-height:1.8;max-width:480px;}
+    /* SERVICE CARDS */
+    .svc-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+    .svc-card{background:var(--black);display:grid;grid-template-columns:56px 260px 1fr;grid-template-rows:auto auto;column-gap:52px;padding:52px 64px;align-items:start;transition:background .2s;}
+    .svc-card:hover{background:var(--surface);}
+    .svc-icon{grid-column:1;grid-row:1/3;align-self:start;width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:border-color .2s;}
+    .svc-card:hover .svc-icon{border-color:var(--gold);}
+    .svc-card-title{grid-column:2;grid-row:1;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,32px);font-weight:500;color:var(--white);margin-bottom:0;line-height:1.1;}
+    .svc-card-body{grid-column:3;grid-row:1/3;font-size:14px;color:var(--g1);line-height:1.8;margin:0;}
+    .svc-tags{grid-column:2;grid-row:2;display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;}
+    .tag{font-size:10px;letter-spacing:.06em;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);border-radius:1px;}
+    /* DIFF TABLE */
+    .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+    .diff-cell{background:var(--black);padding:32px;}
+    .diff-cell.gold-cell{background:rgba(201,169,110,.04);}
+    .diff-head{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;}
+    .diff-head.neg{color:var(--g2);}
+    .diff-head.pos{color:var(--gold);}
+    .diff-item{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:var(--g1);line-height:1.6;margin-bottom:12px;}
+    .diff-dot-neg{width:4px;height:4px;border-radius:50%;background:var(--g2);margin-top:7px;flex-shrink:0;}
+    .diff-dot-pos{width:4px;height:4px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0;}
+    /* INDUSTRIES */
+    .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .ind-cell{background:var(--black);padding:24px 20px;transition:background .2s;}
+    .ind-cell:hover{background:var(--surface);}
+    .ind-name{font-size:13px;color:var(--g1);margin-bottom:8px;transition:color .2s;line-height:1.4;}
+    .ind-cell:hover .ind-name{color:var(--white);}
+    .ind-line{width:20px;height:1px;background:var(--g3);transition:background .2s,width .3s;}
+    .ind-cell:hover .ind-line{background:var(--gold);width:36px;}
+    /* CTA */
+    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,58px);font-weight:400;color:var(--black);line-height:1.1;max-width:700px;}
+    .footer{background:var(--surface);border-top:1px solid var(--border);padding:48px;}
+    .f-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .f-copy{font-size:11px;color:var(--g2);}
+    .f-links{display:flex;gap:24px;}
+    .f-link{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);transition:color .2s;}
+    .f-link:hover{color:var(--white);}
+    #mob-menu{display:none;}#mob-menu.open{display:block;}
+    @media(max-width:1024px){
+      .nav-inner,.container{padding-left:24px;padding-right:24px;}
+      .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
+      .cta-band{padding:60px 24px;}.footer{padding-left:24px;padding-right:24px;}
+      .dept-header{grid-template-columns:1fr;gap:24px;}
+      .svc-card{grid-template-columns:44px 200px 1fr;column-gap:32px;padding:40px 40px;}
+      .ind-grid{grid-template-columns:repeat(3,1fr);}
+    }
+    @media(max-width:768px){
+      .svc-grid{grid-template-columns:1fr;}
+      .svc-card{grid-template-columns:44px 1fr;column-gap:20px;padding:32px 24px;}
+      .svc-card-body{grid-column:1/3;grid-row:3;margin-top:20px;}
+      .svc-tags{grid-column:2;grid-row:2;}
+      .svc-icon{grid-row:1;}
+      .diff-grid{grid-template-columns:1fr;}
+      .ind-grid{grid-template-columns:1fr 1fr;}
+      section{padding:72px 0;}
+      .btn-gold,.btn-outline{padding:13px 24px;font-size:10px;}
+    }
+    @media(max-width:480px){
+      .ind-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r{opacity:1!important;transform:none!important;transition:none!important;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
+      
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link active" style="cursor:default;">Services &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html" class="active">RevOps &amp; MarTech</a>
+          <a href="staff-augmentation.html">Staff Augmentation</a>
+          <a href="offshore-accounting.html">Offshore Accounting</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right" style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Free Audit</a>
+      <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mob-overlay" id="mob-overlay">
+  <div class="mob-overlay-inner">
+    <div class="mob-top">
+      <a href="index.html" class="logo"><svg width="170" height="38" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg></a>
+      <button class="mob-close" id="mob-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="mob-svc-btn" id="mob-svc-btn">Services <svg class="mob-svc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mob-svc-sub" id="mob-svc-sub">
+        <a href="services.html" class="active">RevOps &amp; MarTech</a>
+        <a href="staff-augmentation.html">Staff Augmentation</a>
+        <a href="offshore-accounting.html">Offshore Accounting</a>
+      </div>
+      <a href="process.html" class="mob-nav-link">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="case-studies.html" class="mob-nav-link">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="mob-nav-link">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="mob-nav-link">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </nav>
+    <div class="mob-footer">
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section style="padding:148px 0 80px;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;" class="responsive-2col">
+      <div class="reveal">
+        <span class="eyebrow">Services</span>
+        <h1 style="font-size:clamp(52px,7vw,100px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-top:12px;">We Are Not<br><em style="color:var(--gold);">an Agency.</em></h1>
+      </div>
+      <div class="reveal-r">
+        <div class="rule-gold"></div>
+        <p style="font-size:15px;color:var(--g1);line-height:1.8;margin-bottom:24px;">We are a Revenue Operations and MarTech growth partner. The distinction matters. Agencies deliver outputs. We build the systems that produce outputs — indefinitely, predictably, at scale.</p>
+        <div style="display:flex;gap:20px;align-items:center;">
+          <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);">3 Departments</span>
+          <span style="color:var(--g3);">—</span>
+          <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);">1 Revenue System</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.responsive-2col{grid-template-columns:1fr!important;gap:32px!important;}}</style>
+
+<!-- NOT vs IS -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:52px;display:flex;align-items:baseline;justify-content:space-between;">
+      <div class="reveal">
+        <span class="eyebrow">The Difference</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">How we differ from<br><em>everything else.</em></h2>
+      </div>
+      <span class="s-num reveal">01</span>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-cell">
+        <div class="diff-head neg">What we are not</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>A basic marketing agency running social media posts</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>A cheap lead generation service chasing volume</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>An SEO agency delivering keyword rankings in isolation</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>A freelancer delivering one-off campaigns or designs</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>A tech vendor selling software without strategy</div>
+        <div class="diff-item"><div class="diff-dot-neg"></div>An operations or finance consultancy</div>
+      </div>
+      <div class="diff-cell gold-cell">
+        <div class="diff-head pos">What we are</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>A RevOps and MarTech growth partner — systems-first</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>A team that aligns Marketing, Sales and Technology into one engine</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>AI and automation integrators with deep B2B revenue expertise</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>A strategic ally that audits, restructures and optimises revenue systems</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>Focused exclusively on 30%+ revenue growth as the measurable outcome</div>
+        <div class="diff-item"><div class="diff-dot-pos"></div>Accountable to KPIs, not deliverables</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETING DEPT -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="dept-header reveal">
+      <div>
+        <div class="dept-num">01</div>
+        <h2 class="dept-title">Marketing<br><em>Department</em></h2>
+      </div>
+      <div>
+        <div class="dept-desc">We build marketing systems that generate authority, drive qualified traffic and create brand gravity — using channels that work together rather than competing for budget in isolation.</div>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="svc-card-title">SEO / AEO / GEO</div>
+        <p class="svc-card-body">Traditional SEO is declining. We integrate AI Engine Optimisation (AEO) and Generative Engine Optimisation (GEO) — positioning your brand in AI search results and LLM-generated answers where modern buyers discover vendors.</p>
+        <div class="svc-tags"><span class="tag">Technical SEO</span><span class="tag">AEO</span><span class="tag">GEO</span><span class="tag">Content Strategy</span><span class="tag">Schema Markup</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="svc-card-title">Web Design & Development</div>
+        <p class="svc-card-body">Your website is your primary conversion asset. We design and build high-converting, authority-led websites with precise funnel architecture — not templates, not portfolio pieces, but revenue machines.</p>
+        <div class="svc-tags"><span class="tag">Web Design</span><span class="tag">Development</span><span class="tag">eCommerce</span><span class="tag">UI/UX</span><span class="tag">CRO</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        <div class="svc-card-title">Social Media Marketing</div>
+        <p class="svc-card-body">Consistent brand positioning and distribution that builds authority over time. We don't manage social accounts — we build social authority systems that make you the obvious voice in your market.</p>
+        <div class="svc-tags"><span class="tag">LinkedIn</span><span class="tag">Instagram</span><span class="tag">Content Systems</span><span class="tag">Brand Voice</span></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="svc-card-title">Email Marketing</div>
+        <p class="svc-card-body">Lifecycle marketing and AI-driven nurture sequences that engage prospects at every stage. We design, build and automate email systems that generate revenue — not just opens and clicks.</p>
+        <div class="svc-tags"><span class="tag">Lifecycle Sequences</span><span class="tag">Automation</span><span class="tag">Segmentation</span><span class="tag">AI Personalisation</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="svc-card-title">Online Reputation Management</div>
+        <p class="svc-card-body">Your reputation is your pipeline. We manage, monitor and rebuild brand perception across review platforms, media, and AI-generated search results — ensuring your brand is trusted before the first call.</p>
+        <div class="svc-tags"><span class="tag">ORM</span><span class="tag">Review Strategy</span><span class="tag">Crisis Response</span><span class="tag">Brand Monitoring</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="svc-card-title">Branding & PR</div>
+        <p class="svc-card-body">Strategic brand positioning and media presence that creates category authority. We build the narrative that makes decision-makers seek you out — not the other way around.</p>
+        <div class="svc-tags"><span class="tag">Brand Strategy</span><span class="tag">PR & Media</span><span class="tag">Thought Leadership</span><span class="tag">Advertising</span></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="svc-card-title">PPC & Paid Media</div>
+        <div class="svc-card-body">
+          <p style="margin:0 0 20px;">Every pound of ad spend should compound, not evaporate. We architect and manage paid campaigns across Google Search, YouTube, Meta (Facebook &amp; Instagram), LinkedIn and emerging platforms — built around your ICP, optimised around revenue, not vanity metrics.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div style="border:1px solid var(--border);padding:14px 16px;">
+              <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Google Ecosystem</div>
+              <div style="font-size:12px;color:var(--g1);line-height:1.6;">Search · Display · Shopping · Performance Max · YouTube Pre-roll &amp; Discovery</div>
+            </div>
+            <div style="border:1px solid var(--border);padding:14px 16px;">
+              <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Meta Ecosystem</div>
+              <div style="font-size:12px;color:var(--g1);line-height:1.6;">Facebook · Instagram · Reels · Catalog Ads · Retargeting · Lookalike Audiences</div>
+            </div>
+            <div style="border:1px solid var(--border);padding:14px 16px;">
+              <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Social Paid</div>
+              <div style="font-size:12px;color:var(--g1);line-height:1.6;">LinkedIn Sponsored · TikTok Ads · Pinterest · X/Twitter · Snapchat</div>
+            </div>
+            <div style="border:1px solid var(--border);padding:14px 16px;">
+              <div style="font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">What We Obsess Over</div>
+              <div style="font-size:12px;color:var(--g1);line-height:1.6;">CAC reduction · ROAS · Attribution modelling · Funnel-matched creative · Bid strategy</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;padding:16px;background:rgba(201,169,110,.04);border:1px solid rgba(201,169,110,.15);">
+            <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Our Difference</div>
+            <p style="font-size:12px;color:var(--g1);line-height:1.7;margin:0;">We don't just run ads. We build paid media systems that integrate with your CRM, feed attribution data back into your pipeline and adjust targeting based on which leads actually close — not just which ones click.</p>
+          </div>
+        </div>
+        <div class="svc-tags"><span class="tag">Google Ads</span><span class="tag">YouTube</span><span class="tag">Meta Ads</span><span class="tag">LinkedIn</span><span class="tag">TikTok</span><span class="tag">Performance Max</span><span class="tag">Attribution</span><span class="tag">ROAS Optimisation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALES DEPT -->
+<section>
+  <div class="container">
+    <div class="dept-header reveal">
+      <div>
+        <div class="dept-num">02</div>
+        <h2 class="dept-title">Sales<br><em>Department</em></h2>
+      </div>
+      <div>
+        <div class="dept-desc">We design the architecture that takes qualified interest and converts it into closed revenue — with precision, consistency and a feedback loop that gets sharper over time.</div>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="svc-card-title">Lead Generation Funnels</div>
+        <p class="svc-card-body">End-to-end funnel design that attracts, qualifies and converts your ideal client. We build multi-touch systems — paid, organic and outbound — coordinated around your ICP.</p>
+        <div class="svc-tags"><span class="tag">Funnel Architecture</span><span class="tag">ICP Targeting</span><span class="tag">Landing Pages</span><span class="tag">Lead Scoring</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+        <div class="svc-card-title">Pipeline Architecture</div>
+        <p class="svc-card-body">A clear, structured pipeline with defined stages, handoff criteria and velocity metrics. We build the CRM architecture and reporting layer so you can see exactly where revenue is and where it stalls.</p>
+        <div class="svc-tags"><span class="tag">CRM Setup</span><span class="tag">Pipeline Design</span><span class="tag">Stage Criteria</span><span class="tag">Velocity Metrics</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="svc-card-title">Appointment Setting</div>
+        <p class="svc-card-body">We design and optimise the consideration stage — from first touch to booked meeting. AI-assisted outreach, nurture sequences and booking systems that fill your calendar with qualified decision-makers.</p>
+        <div class="svc-tags"><span class="tag">Outreach Systems</span><span class="tag">AI SDR</span><span class="tag">Booking Automation</span></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="svc-card-title">Conversion Rate Optimisation</div>
+        <p class="svc-card-body">Systematic testing and optimisation across every touchpoint — from ad creative to landing page to proposal template. We identify conversion gaps and eliminate them with data, not guesswork.</p>
+        <div class="svc-tags"><span class="tag">A/B Testing</span><span class="tag">UX Audit</span><span class="tag">Copy Optimisation</span><span class="tag">Heatmaps</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="svc-card-title">Sales Enablement</div>
+        <p class="svc-card-body">We build the materials, scripts, battle cards and automation that make your sales team consistently effective — regardless of individual skill variance.</p>
+        <div class="svc-tags"><span class="tag">Sales Scripts</span><span class="tag">Proposals</span><span class="tag">Objection Handling</span><span class="tag">Playbooks</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="svc-card-title">Revenue Analytics</div>
+        <p class="svc-card-body">Real-time dashboards and reporting infrastructure so you know your numbers — CAC, LTV, pipeline velocity, conversion rates and revenue attribution — at any moment.</p>
+        <div class="svc-tags"><span class="tag">KPI Dashboards</span><span class="tag">Attribution</span><span class="tag">Revenue Forecasting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH DEPT -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="dept-header reveal">
+      <div>
+        <div class="dept-num">03</div>
+        <h2 class="dept-title">Technology<br><em>Department</em></h2>
+      </div>
+      <div>
+        <div class="dept-desc">AI and automation create the largest competitive advantage available today. We build the technical infrastructure that makes your Marketing and Sales systems self-improving over time.</div>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.4V12l3 3-3 3v1.6c1.2.6 2 1.9 2 3.4a4 4 0 0 1-8 0c0-1.5.8-2.8 2-3.4V18l-3-3 3-3V9.4C8.8 8.8 8 7.5 8 6a4 4 0 0 1 4-4z"/></svg></div>
+        <div class="svc-card-title">AI Agents & Automation</div>
+        <p class="svc-card-body">Custom AI agents, workflow automation and intelligent bots that replace manual processes across your sales, marketing and operations — creating leverage at every stage of the revenue cycle.</p>
+        <div class="svc-tags"><span class="tag">AI Agents</span><span class="tag">Workflow Automation</span><span class="tag">Chatbots</span><span class="tag">n8n / Make</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <div class="svc-card-title">Central Intelligence System</div>
+        <p class="svc-card-body">The data backbone of your revenue operation. We build the unified data layer that connects your CRM, marketing tools, ad platforms and analytics — giving you a single source of truth for all revenue decisions.</p>
+        <div class="svc-tags"><span class="tag">Data Architecture</span><span class="tag">Data Warehouse</span><span class="tag">ETL Pipelines</span><span class="tag">BI Dashboards</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="svc-card-title">MarTech Stack Optimisation</div>
+        <p class="svc-card-body">Audit, consolidate and optimise your technology stack. We identify redundant tools, integration gaps and capability deficits — then build the optimal tech architecture for your growth stage.</p>
+        <div class="svc-tags"><span class="tag">Stack Audit</span><span class="tag">Tool Consolidation</span><span class="tag">Integration Design</span><span class="tag">Cost Reduction</span></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+        <div class="svc-card-title">CRM Architecture & Integration</div>
+        <p class="svc-card-body">We design and implement CRM systems that reflect how your business actually sells — not how the software vendor assumes you sell. Custom objects, automations, scoring models and integrations.</p>
+        <div class="svc-tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Custom CRM</span><span class="tag">Integrations</span></div>
+      </div>
+      <div class="svc-card reveal d1">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="svc-card-title">Cloud Systems & Infrastructure</div>
+        <p class="svc-card-body">Scalable cloud infrastructure that grows with your business. We architect and manage the systems foundation that keeps your digital revenue operation running securely and efficiently.</p>
+        <div class="svc-tags"><span class="tag">AWS / GCP</span><span class="tag">System Architecture</span><span class="tag">Security</span><span class="tag">Scalability</span></div>
+      </div>
+      <div class="svc-card reveal d2">
+        <div class="svc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="svc-card-title">Full-Stack Development</div>
+        <p class="svc-card-body">Custom applications, portals, tools and integrations built to solve specific revenue challenges. When no off-the-shelf solution exists, we build it.</p>
+        <div class="svc-tags"><span class="tag">Custom Development</span><span class="tag">API Integrations</span><span class="tag">Web Apps</span><span class="tag">Portals</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section>
+  <div class="container">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:52px;">
+      <div class="reveal">
+        <span class="eyebrow">Industries</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">Vertical expertise across<br><em>50+ sectors.</em></h2>
+      </div>
+      <span class="s-num reveal">04</span>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-cell reveal"><div class="ind-name">Construction & Engineering</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Automotive</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">D2C Brands</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Education & Training</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal"><div class="ind-name">B2B Services</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Professional Services</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">SaaS & Technology</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Finance & Fintech</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal"><div class="ind-name">Healthcare</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Real Estate & Property</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">Legal & Compliance</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">E-commerce & Retail</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal"><div class="ind-name">Insurance</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Manufacturing</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">Logistics & Supply Chain</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Hospitality & Travel</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal"><div class="ind-name">Crypto & Blockchain</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Banking & Wealth</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">Dental & Medical</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Fashion & Lifestyle</div><div class="ind-line"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL SERVICES -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0;">
+  <div class="container" style="max-width:1400px;margin:0 auto;padding:0 48px;">
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="eyebrow">Additional Services</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">Beyond RevOps.<br><em style="font-style:italic;color:var(--gold);">Extend your capability.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);">
+
+      <a href="staff-augmentation.html" style="display:block;background:var(--black);padding:44px 40px;text-decoration:none;transition:background .2s;position:relative;overflow:hidden;" onmouseenter="this.style.background='#0d0d0d'" onmouseleave="this.style.background='var(--black)'">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+          <div style="width:48px;height:48px;border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Staff Augmentation</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#fff;line-height:1.1;margin-bottom:14px;">Scale your team.<br>Without the overhead.</h3>
+        <p style="font-size:13px;color:#AAAAAA;line-height:1.75;max-width:420px;">Pre-vetted, senior-level specialists in Marketing, Sales, Technology and Operations — integrated into your workflow within 72 hours. No recruitment fees. No long-term hiring risk.</p>
+        <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Digital Marketing</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">SDRs &amp; BDRs</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Developers</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Operations</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Save 70% vs. local hire</span>
+        </div>
+      </a>
+
+      <a href="offshore-accounting.html" style="display:block;background:var(--black);padding:44px 40px;text-decoration:none;transition:background .2s;position:relative;overflow:hidden;" onmouseenter="this.style.background='#0d0d0d'" onmouseleave="this.style.background='var(--black)'">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+          <div style="width:48px;height:48px;border:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Offshore Accounting &amp; Bookkeeping</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#fff;line-height:1.1;margin-bottom:14px;">Your numbers.<br>Always right.</h3>
+        <p style="font-size:13px;color:#AAAAAA;line-height:1.75;max-width:420px;">Dedicated offshore accounting teams handling bookkeeping, payroll, AP/AR, financial reporting and tax prep — at 60–70% less than an in-house hire. UK, US, Canada and India compliance covered.</p>
+        <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;">
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Bookkeeping</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Payroll</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">CFO Advisory</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">Tax Prep</span>
+          <span style="font-size:10px;color:#666;border:1px solid rgba(255,255,255,0.07);padding:4px 10px;">From £499/mo</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <h2>Ready to align your revenue system?</h2>
+  <a href="contact.html" class="btn-black">Apply for Free Audit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+<footer class="footer">
+  <div class="f-inner">
+    <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
+    <div class="f-links">
+      <a href="index.html" class="f-link">Home</a>
+      <a href="services.html" class="f-link">Services</a>
+      <a href="process.html" class="f-link">Process</a>
+      <a href="about.html" class="f-link">About</a>
+      <a href="contact.html" class="f-link">Contact</a>
+    </div>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd.</span>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+</script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>

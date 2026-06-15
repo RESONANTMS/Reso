@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Augmentation — Resonant Media Solutions</title>
+  <meta name="description" content="Scale your team instantly with pre-vetted, senior-level talent in Marketing, Sales, Technology and Operations. Flexible engagement, no long-term hiring risk.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
+    a{text-decoration:none;color:inherit;}
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.95);backdrop-filter:blur(20px);}
+    .nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+    .nav-links{display:flex;align-items:center;gap:36px;margin-left:56px;}
+    .mob-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;transition:border-color .2s,color .2s;}.mob-btn:hover{border-color:var(--gold);color:var(--white);}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:9998;background:#000;flex-direction:column;}.mob-overlay.open{display:flex;}
+    .mob-overlay-inner{display:flex;flex-direction:column;height:100%;padding:0 32px 40px;}.mob-top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;}.mob-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;line-height:1;}
+    .mob-nav{display:flex;flex-direction:column;gap:0;margin-top:8px;flex:1;overflow-y:auto;}.mob-nav-link{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:color .2s;}.mob-nav-link:hover,.mob-nav-link.active{color:var(--white);}
+    .mob-svc-btn{width:100%;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--white);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-align:left;}
+    .mob-svc-arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}.mob-svc-sub{display:none;flex-direction:column;padding-left:16px;}.mob-svc-sub.open{display:flex;}.mob-svc-sub a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .2s;}.mob-svc-sub a:hover,.mob-svc-sub a.active{color:var(--gold);}
+    .mob-footer{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-direction:column;gap:12px;}.mob-offices{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .nav-link{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);transition:color .2s;position:relative;}
+    .nav-link:hover,.nav-link.active{color:var(--white);}
+    .nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:10px 22px;border-radius:1px;transition:background .2s;}
+    .nav-cta:hover{background:var(--gl);}
+    /* DROPDOWN */
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:-20px;background:rgba(0,0,0,.97);border:1px solid var(--border);min-width:220px;padding:8px 0;z-index:200;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);transition:color .15s,background .15s;}
+    .nav-dropdown-menu a:hover{color:var(--white);background:rgba(201,169,110,.06);}
+    .nav-dropdown-menu a.active{color:var(--gold);}
+    /* BUTTONS */
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-gold:hover{background:var(--gl);transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:13px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:1px solid rgba(255,255,255,0.18);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-black:hover{background:#111;transform:translateY(-1px);}
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal.in{opacity:1;transform:translateY(0);}
+    .reveal-l{opacity:0;transform:translateX(-20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-l.in{opacity:1;transform:translateX(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+    @keyframes heroUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .hero-anim{animation:heroUp .9s cubic-bezier(.16,1,.3,1) both;}
+    .ha1{animation-delay:.1s;}.ha2{animation-delay:.25s;}.ha3{animation-delay:.4s;}
+    /* LAYOUT */
+    .container{max-width:1400px;margin:0 auto;padding:0 48px;}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    .rule-gold{width:36px;height:1px;background:var(--gold);margin-bottom:28px;}
+    section{padding:104px 0;}
+    /* HERO */
+    .page-hero{padding:148px 0 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(201,169,110,.05) 0%,transparent 65%);pointer-events:none;}
+    /* STATS STRIP */
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:64px;}
+    .ss-cell{background:var(--black);padding:28px 32px;}
+    .ss-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold);line-height:1;}
+    .ss-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-top:6px;}
+    /* ROLES GRID */
+    .roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .role-card{background:var(--black);padding:32px 28px;transition:background .2s;}
+    .role-card:hover{background:var(--surface);}
+    .role-icon{width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:border-color .2s;}
+    .role-card:hover .role-icon{border-color:var(--gold);}
+    .role-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--white);margin-bottom:10px;}
+    .role-desc{font-size:12px;color:var(--g1);line-height:1.75;margin-bottom:16px;}
+    .role-tags{display:flex;flex-wrap:wrap;gap:5px;}
+    .role-tag{font-size:10px;padding:3px 8px;border:1px solid var(--bl);color:var(--g2);letter-spacing:.04em;}
+    /* HOW IT WORKS */
+    .how-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .how-step{background:var(--black);padding:32px 24px;}
+    .how-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:16px;}
+    .how-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--white);margin-bottom:10px;}
+    .how-body{font-size:12px;color:var(--g1);line-height:1.75;}
+    /* COMPARISON */
+    .compare-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border-bottom:1px solid var(--border);}
+    .compare-row:first-child{border-top:1px solid var(--border);}
+    .cc{padding:18px 24px;background:var(--black);font-size:13px;}
+    .cc-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .cc-bad{color:#666;}
+    .cc-good{color:var(--gold);}
+    /* MODELS */
+    .models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .model-card{background:var(--black);padding:36px 32px;}
+    .model-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);margin-bottom:6px;}
+    .model-price{font-size:11px;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
+    .model-feat{font-size:12px;color:var(--g1);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+    .model-feat:last-of-type{border-bottom:none;}
+    .feat-check{color:var(--gold);flex-shrink:0;margin-top:1px;}
+    /* INDUSTRIES */
+    .ind-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .ind-cell{background:var(--black);padding:22px 20px;transition:background .2s;}
+    .ind-cell:hover{background:var(--surface);}
+    .ind-name{font-size:12px;color:var(--g1);margin-bottom:8px;transition:color .2s;}
+    .ind-cell:hover .ind-name{color:var(--white);}
+    .ind-line{width:16px;height:1px;background:var(--g3);transition:background .2s,width .3s;}
+    .ind-cell:hover .ind-line{background:var(--gold);width:28px;}
+    /* CTA BAND */
+    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--black);line-height:1.1;max-width:680px;}
+    /* FOOTER */
+    .footer{background:var(--surface);border-top:1px solid var(--border);}
+    .footer-inner{max-width:1400px;margin:0 auto;padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+    .f-copy{font-size:11px;color:var(--g2);}
+    .f-link{font-size:11px;color:var(--g1);margin-left:24px;transition:color .2s;}
+    .f-link:hover{color:var(--white);}
+    @media(max-width:1024px){
+      .nav-inner{padding:0 24px;}.container{padding:0 24px;}
+      .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
+      .roles-grid{grid-template-columns:repeat(2,1fr);}
+      .how-grid{grid-template-columns:repeat(3,1fr);}
+      .stats-strip{grid-template-columns:repeat(2,1fr);}
+      .ind-grid{grid-template-columns:repeat(3,1fr);}
+    }
+    @media(max-width:768px){
+      .roles-grid{grid-template-columns:1fr;}
+      .how-grid{grid-template-columns:1fr 1fr;}
+      .compare-row{grid-template-columns:1fr;}
+      .models-grid{grid-template-columns:1fr;}
+      .ind-grid{grid-template-columns:repeat(2,1fr);}
+      .cta-band{padding:56px 24px;}
+      .footer-inner{padding:20px 24px;}
+      section{padding:72px 0;}
+      .btn-gold,.btn-outline{padding:13px 24px;font-size:10px;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .reveal,.reveal-l{opacity:1!important;transform:none!important;transition:none!important;}
+      .hero-anim{animation:none!important;opacity:1!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
+      
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link active" style="cursor:default;">Services &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html">RevOps &amp; MarTech</a>
+          <a href="staff-augmentation.html" class="active">Staff Augmentation</a>
+          <a href="offshore-accounting.html">Offshore Accounting</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Free Consultation</a>
+      <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mob-overlay" id="mob-overlay">
+  <div class="mob-overlay-inner">
+    <div class="mob-top">
+      <a href="index.html" class="logo"><svg width="170" height="38" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg></a>
+      <button class="mob-close" id="mob-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="mob-svc-btn" id="mob-svc-btn">Services <svg class="mob-svc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mob-svc-sub" id="mob-svc-sub">
+        <a href="services.html">RevOps &amp; MarTech</a>
+        <a href="staff-augmentation.html" class="active">Staff Augmentation</a>
+        <a href="offshore-accounting.html">Offshore Accounting</a>
+      </div>
+      <a href="process.html" class="mob-nav-link">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="case-studies.html" class="mob-nav-link">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="mob-nav-link">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="mob-nav-link">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </nav>
+    <div class="mob-footer">
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div style="max-width:860px;">
+      <div class="rule-gold hero-anim ha1"></div>
+      <div class="eyebrow hero-anim ha1" style="margin-bottom:16px;">Staff Augmentation</div>
+      <h1 style="font-size:clamp(52px,8vw,110px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:32px;" class="hero-anim ha2">
+        The talent you need.<br><em style="color:var(--gold);">None of the overhead.</em>
+      </h1>
+      <p style="font-size:16px;color:var(--g1);max-width:560px;line-height:1.85;margin-bottom:36px;" class="hero-anim ha3">Extend your team with pre-vetted, senior-level specialists in Marketing, Sales, Technology and Operations — integrated into your workflow within days, not months. No recruitment fees. No long-term commitment risk.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;" class="hero-anim ha3">
+        <a href="contact.html" class="btn-gold">Discuss Your Requirements <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#roles" class="btn-outline">See Available Roles</a>
+      </div>
+    </div>
+    <!-- STATS -->
+    <div class="stats-strip reveal">
+      <div class="ss-cell"><div class="ss-num">72<span style="font-size:22px;color:var(--gl);">hr</span></div><div class="ss-label">Average Onboarding Time</div></div>
+      <div class="ss-cell"><div class="ss-num">70<span style="font-size:22px;color:var(--gl);">%</span></div><div class="ss-label">Cost Saving vs. Local Hire</div></div>
+      <div class="ss-cell"><div class="ss-num">50<span style="font-size:22px;color:var(--gl);">+</span></div><div class="ss-label">Specialist Profiles</div></div>
+      <div class="ss-cell"><div class="ss-num">0</div><div class="ss-label">Recruitment Agency Fees</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE OFFER -->
+<section id="roles">
+  <div class="container">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:52px;">
+      <div class="reveal">
+        <span class="eyebrow">Available Specialisms</span>
+        <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">Senior talent across<br><em>every growth function.</em></h2>
+      </div>
+    </div>
+    <div class="roles-grid">
+
+      <div class="role-card reveal">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="role-title">Digital Marketing Specialists</div>
+        <div class="role-desc">Experienced performance marketers, content strategists, SEO/AEO specialists and brand managers who integrate directly into your marketing function and execute from day one.</div>
+        <div class="role-tags">
+          <span class="role-tag">PPC Management</span><span class="role-tag">SEO / AEO</span><span class="role-tag">Content Strategy</span><span class="role-tag">Email Marketing</span><span class="role-tag">Social Media</span><span class="role-tag">Analytics</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d1">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="role-title">Sales Development Representatives</div>
+        <div class="role-desc">Trained outbound SDRs and BDRs who handle prospecting, qualification, appointment setting and CRM management — giving your sales team more time to close.</div>
+        <div class="role-tags">
+          <span class="role-tag">Outbound Prospecting</span><span class="role-tag">Lead Qualification</span><span class="role-tag">Appointment Setting</span><span class="role-tag">CRM Management</span><span class="role-tag">LinkedIn Outreach</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d2">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="role-title">Technology &amp; Development</div>
+        <div class="role-desc">Full-stack developers, MarTech engineers, automation specialists, data engineers and AI workflow builders who extend your technical capability without permanent hiring cost.</div>
+        <div class="role-tags">
+          <span class="role-tag">Full-Stack Dev</span><span class="role-tag">MarTech Integration</span><span class="role-tag">AI Automation</span><span class="role-tag">Data Engineering</span><span class="role-tag">CRM Dev</span><span class="role-tag">API Integration</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d3">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="role-title">Creative &amp; Design</div>
+        <div class="role-desc">UI/UX designers, brand creatives, motion designers, video editors and graphic designers who deliver high-quality assets aligned to your brand standards and timelines.</div>
+        <div class="role-tags">
+          <span class="role-tag">UI/UX Design</span><span class="role-tag">Brand Identity</span><span class="role-tag">Motion Graphics</span><span class="role-tag">Video Editing</span><span class="role-tag">Ad Creatives</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="role-title">Operations &amp; Project Management</div>
+        <div class="role-desc">Experienced operations managers, project coordinators and executive assistants who handle workflows, vendor relationships, reporting and internal coordination at senior level.</div>
+        <div class="role-tags">
+          <span class="role-tag">Project Management</span><span class="role-tag">Process Design</span><span class="role-tag">Vendor Management</span><span class="role-tag">Executive Support</span><span class="role-tag">Reporting</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d1">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="role-title">Customer Success &amp; Account Management</div>
+        <div class="role-desc">Dedicated CSMs and account managers who handle onboarding, retention, upsell conversations and client communication — reducing churn and increasing lifetime value.</div>
+        <div class="role-tags">
+          <span class="role-tag">Client Onboarding</span><span class="role-tag">Retention</span><span class="role-tag">Upselling</span><span class="role-tag">NPS Management</span><span class="role-tag">CRM</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d2">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <div class="role-title">Data &amp; Analytics</div>
+        <div class="role-desc">Data analysts, BI specialists and reporting engineers who turn your raw data into actionable insights — building dashboards, attribution models and revenue forecasts.</div>
+        <div class="role-tags">
+          <span class="role-tag">Power BI / Looker</span><span class="role-tag">SQL</span><span class="role-tag">Attribution Models</span><span class="role-tag">Revenue Forecasting</span><span class="role-tag">GA4</span>
+        </div>
+      </div>
+
+      <div class="role-card reveal d3">
+        <div class="role-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="role-title">HR &amp; Talent Coordination</div>
+        <div class="role-desc">HR coordinators, talent acquisition support and people operations specialists who manage onboarding, compliance and internal HR processes across your organisation.</div>
+        <div class="role-tags">
+          <span class="role-tag">Talent Acquisition</span><span class="role-tag">Onboarding</span><span class="role-tag">HRIS Management</span><span class="role-tag">Compliance</span><span class="role-tag">People Ops</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">The Process</span>
+      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">From requirement to<br><em>fully onboarded in 72 hours.</em></h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal"><div class="how-num">01</div><h3 class="how-title">Requirement Scoping</h3><p class="how-body">A 30-minute briefing call to understand the role, responsibilities, required skill set, timezone overlap needs and your existing team workflow.</p></div>
+      <div class="how-step reveal d1"><div class="how-num">02</div><h3 class="how-title">Candidate Matching</h3><p class="how-body">We match against our pre-vetted talent pool — specialists who have been assessed on technical capability, communication and deliverable quality.</p></div>
+      <div class="how-step reveal d2"><div class="how-num">03</div><h3 class="how-title">Introduction Call</h3><p class="how-body">You speak directly with 1–3 matched candidates. Assess culture fit, communication style and approach before making a decision.</p></div>
+      <div class="how-step reveal d3"><div class="how-num">04</div><h3 class="how-title">Onboarding</h3><p class="how-body">Your chosen specialist is integrated into your tools, communication channels and workflows. We facilitate the setup and handle initial coordination.</p></div>
+      <div class="how-step reveal d4"><div class="how-num">05</div><h3 class="how-title">Ongoing Management</h3><p class="how-body">Regular performance reviews, structured feedback loops and the flexibility to scale hours up, down or add additional team members as your needs evolve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF AUG VS HIRING COMPARISON -->
+<section>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+      <div class="reveal-l">
+        <span class="eyebrow">Why Augmentation</span>
+        <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;margin-bottom:18px;line-height:1.1;">Staff aug vs.<br><em>traditional hiring.</em></h2>
+        <p style="font-size:14px;color:var(--g1);line-height:1.8;">Permanent headcount carries hidden costs most businesses underestimate. Staff augmentation gives you the output without the overhead — and the flexibility to scale in any direction.</p>
+      </div>
+      <div class="reveal">
+        <div style="border:1px solid var(--border);">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--border);gap:1px;">
+            <div style="background:var(--s2);padding:14px 16px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);">Factor</div>
+            <div style="background:var(--s2);padding:14px 16px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);">Traditional Hire</div>
+            <div style="background:var(--s2);padding:14px 16px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);">Staff Aug</div>
+          </div>
+          <div class="compare-row"><div class="cc cc-label">Time to Start</div><div class="cc cc-bad">60–120 days</div><div class="cc cc-good">24–72 hours</div></div>
+          <div class="compare-row"><div class="cc cc-label">Recruitment Cost</div><div class="cc cc-bad">15–25% of salary</div><div class="cc cc-good">Zero</div></div>
+          <div class="compare-row"><div class="cc cc-label">Total Cost</div><div class="cc cc-bad">1.3–1.5× salary</div><div class="cc cc-good">Save 50–70%</div></div>
+          <div class="compare-row"><div class="cc cc-label">Flexibility</div><div class="cc cc-bad">Fixed commitment</div><div class="cc cc-good">Scale up or down</div></div>
+          <div class="compare-row"><div class="cc cc-label">Termination Risk</div><div class="cc cc-bad">Legal complexity</div><div class="cc cc-good">30-day notice</div></div>
+          <div class="compare-row"><div class="cc cc-label">Benefits &amp; Payroll</div><div class="cc cc-bad">Your responsibility</div><div class="cc cc-good">Fully managed</div></div>
+          <div class="compare-row" style="border-bottom:none;"><div class="cc cc-label">Skill Gap Risk</div><div class="cc cc-bad">High — locked in</div><div class="cc cc-good">Replace within 48hr</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:900px){.compare-2col{grid-template-columns:1fr!important;gap:40px!important;}}</style>
+
+<!-- ENGAGEMENT MODELS -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">Engagement Models</span>
+      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">Three ways to<br><em>scale your team.</em></h2>
+    </div>
+    <div class="models-grid">
+      <div class="model-card reveal">
+        <div class="model-title">Part-Time Specialist</div>
+        <div class="model-price">20 hours / week · Flexible</div>
+        <div class="model-feat"><span class="feat-check">→</span>Ideal for a specific function (e.g. PPC only)</div>
+        <div class="model-feat"><span class="feat-check">→</span>Cost-effective entry point</div>
+        <div class="model-feat"><span class="feat-check">→</span>Can scale to full-time at any point</div>
+        <div class="model-feat"><span class="feat-check">→</span>Weekly output reports included</div>
+        <div class="model-feat"><span class="feat-check">→</span>30-day rolling contract</div>
+        <div style="margin-top:28px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Enquire</a></div>
+      </div>
+      <div class="model-card reveal d1" style="border:1px solid rgba(201,169,110,.3);position:relative;">
+        <div style="position:absolute;top:0;right:0;background:var(--gold);color:#000;font-size:9px;font-weight:600;letter-spacing:.1em;padding:5px 12px;text-transform:uppercase;">Most Popular</div>
+        <div class="model-title">Full-Time Dedicated</div>
+        <div class="model-price">40 hours / week · Dedicated resource</div>
+        <div class="model-feat"><span class="feat-check">→</span>One specialist, entirely yours</div>
+        <div class="model-feat"><span class="feat-check">→</span>Same timezone overlap (5+ hrs/day)</div>
+        <div class="model-feat"><span class="feat-check">→</span>Direct Slack/Teams integration</div>
+        <div class="model-feat"><span class="feat-check">→</span>Monthly performance review with Resonant</div>
+        <div class="model-feat"><span class="feat-check">→</span>Replacement within 48hr if needed</div>
+        <div style="margin-top:28px;"><a href="contact.html" class="btn-gold" style="width:100%;justify-content:center;">Get Started</a></div>
+      </div>
+      <div class="model-card reveal d2">
+        <div class="model-title">Augmented Team</div>
+        <div class="model-price">Multi-role · Managed pod</div>
+        <div class="model-feat"><span class="feat-check">→</span>2–6 specialists across disciplines</div>
+        <div class="model-feat"><span class="feat-check">→</span>Resonant-managed team pod</div>
+        <div class="model-feat"><span class="feat-check">→</span>Single point of accountability</div>
+        <div class="model-feat"><span class="feat-check">→</span>Shared KPI dashboard</div>
+        <div class="model-feat"><span class="feat-check">→</span>Priority replacement SLA</div>
+        <div style="margin-top:28px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Discuss</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;" class="reveal">
+      <span class="eyebrow">Industries We Support</span>
+      <h2 style="font-size:clamp(30px,3.5vw,48px);font-weight:300;margin-top:10px;line-height:1.1;">Sector-matched talent<br><em>for every vertical.</em></h2>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-cell reveal"><div class="ind-name">SaaS &amp; Technology</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Financial Services</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">D2C &amp; E-commerce</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Professional Services</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d4"><div class="ind-name">Healthcare &amp; MedTech</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal"><div class="ind-name">Real Estate</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d1"><div class="ind-name">Construction</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d2"><div class="ind-name">Education &amp; Training</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d3"><div class="ind-name">Legal &amp; Compliance</div><div class="ind-line"></div></div>
+      <div class="ind-cell reveal d4"><div class="ind-name">Automotive</div><div class="ind-line"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band reveal">
+  <h2>Build your extended team. Start in 72 hours.</h2>
+  <a href="contact.html" class="btn-black">Book a Scoping Call <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd.</span>
+    <div>
+      <a href="services.html" class="f-link">Services</a>
+      <a href="offshore-accounting.html" class="f-link">Offshore Accounting</a>
+      <a href="contact.html" class="f-link">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.reveal,.reveal-l').forEach(el=>io.observe(el));
+</script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>

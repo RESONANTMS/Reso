@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process — Resonant Media Solutions</title>
+  <meta name="description" content="Our four-step revenue systems process: Deep Audit, Bottleneck Report, Implementation, KPI Standardisation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
+    a{text-decoration:none;color:inherit;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+    .nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+    .nav-links{display:flex;align-items:center;gap:36px;margin-left:56px;}
+    .nav-dropdown{position:relative;}.nav-dropdown-menu{display:none;position:absolute;top:100%;left:-20px;background:rgba(0,0,0,.97);border:1px solid var(--border);min-width:220px;padding:8px 0;z-index:200;}.nav-dropdown:hover .nav-dropdown-menu{display:block;}.nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);transition:color .15s,background .15s;}.nav-dropdown-menu a:hover{color:var(--white);background:rgba(201,169,110,.06);}
+    .mob-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;transition:border-color .2s,color .2s;}.mob-btn:hover{border-color:var(--gold);color:var(--white);}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:9998;background:#000;flex-direction:column;}.mob-overlay.open{display:flex;}
+    .mob-overlay-inner{display:flex;flex-direction:column;height:100%;padding:0 32px 40px;}.mob-top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;}.mob-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;line-height:1;}
+    .mob-nav{display:flex;flex-direction:column;gap:0;margin-top:8px;flex:1;overflow-y:auto;}.mob-nav-link{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:color .2s;}.mob-nav-link:hover,.mob-nav-link.active{color:var(--white);}
+    .mob-svc-btn{width:100%;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-align:left;transition:color .2s;}.mob-svc-btn:hover{color:var(--white);}
+    .mob-svc-arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}.mob-svc-sub{display:none;flex-direction:column;padding-left:16px;}.mob-svc-sub.open{display:flex;}.mob-svc-sub a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .2s;}.mob-svc-sub a:hover{color:var(--gold);}
+    .mob-footer{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-direction:column;gap:12px;}.mob-offices{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .nav-link{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--white);}
+    .nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:10px 22px;border-radius:1px;transition:background .2s;white-space:nowrap;}
+    .nav-cta:hover{background:var(--gl);}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-gold:hover{background:var(--gl);transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:13px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:1px solid rgba(255,255,255,0.18);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-black:hover{background:#111;transform:translateY(-1px);}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal.in{opacity:1;transform:translateY(0);}
+    .reveal-l{opacity:0;transform:translateX(-20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-l.in{opacity:1;transform:translateX(0);}
+    .reveal-r{opacity:0;transform:translateX(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-r.in{opacity:1;transform:translateX(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+    .container{max-width:1400px;margin:0 auto;padding:0 48px;}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    section{padding:112px 0;}
+    /* STEP BLOCK */
+    .step-block{display:grid;grid-template-columns:200px 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1px;}
+    .step-block:last-child{margin-bottom:0;}
+    .step-num-col{background:var(--black);padding:48px 40px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;}
+    .step-big-num{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:300;color:var(--g3);line-height:1;}
+    .step-duration-badge{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.3);padding:6px 12px;}
+    .step-content{background:var(--black);padding:48px;}
+    .step-content:hover{background:rgba(201,169,110,.02);}
+    .step-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--white);margin-bottom:16px;line-height:1.05;}
+    .step-title em{font-style:italic;color:var(--gold);}
+    .step-desc{font-size:14px;color:var(--g1);line-height:1.8;margin-bottom:28px;max-width:640px;}
+    .step-items{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px;}
+    .step-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--g1);line-height:1.5;}
+    .step-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0;}
+    .step-deliverable{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:7px 16px;}
+    /* TIMELINE */
+    .timeline-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .tl-cell{background:var(--black);padding:32px 28px;}
+    .tl-week{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+    .tl-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white);margin-bottom:8px;}
+    .tl-body{font-size:12px;color:var(--g1);line-height:1.7;}
+    /* EXPECT */
+    .expect-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+    .expect-cell{background:var(--black);padding:36px;}
+    .expect-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);margin-bottom:10px;}
+    .expect-val{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--white);margin-bottom:8px;}
+    .expect-body{font-size:13px;color:var(--g1);line-height:1.7;}
+    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,58px);font-weight:400;color:var(--black);line-height:1.1;max-width:700px;}
+    .footer{background:var(--surface);border-top:1px solid var(--border);padding:48px;}
+    .f-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .f-copy{font-size:11px;color:var(--g2);}
+    .f-links{display:flex;gap:24px;}
+    .f-link{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);transition:color .2s;}
+    .f-link:hover{color:var(--white);}
+    @media(max-width:1024px){
+      .nav-inner,.container{padding-left:24px;padding-right:24px;}
+      .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
+      .cta-band{padding:60px 24px;}.footer{padding-left:24px;padding-right:24px;}
+      .step-block{grid-template-columns:1fr;}
+      .step-num-col{padding:32px 28px;flex-direction:row;align-items:center;}
+      .timeline-grid{grid-template-columns:1fr 1fr;}
+      .expect-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:768px){
+      .step-items{grid-template-columns:1fr;}
+      .timeline-grid{grid-template-columns:1fr;}
+      section{padding:72px 0;}
+      .btn-gold,.btn-outline{padding:13px 24px;font-size:10px;}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r{opacity:1!important;transform:none!important;transition:none!important;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
+      
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" style="cursor:default;">Services &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html">RevOps &amp; MarTech</a>
+          <a href="staff-augmentation.html">Staff Augmentation</a>
+          <a href="offshore-accounting.html">Offshore Accounting</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link active">Process</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Free Audit</a>
+      <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mob-overlay" id="mob-overlay">
+  <div class="mob-overlay-inner">
+    <div class="mob-top">
+      <a href="index.html" class="logo"><svg width="170" height="38" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg></a>
+      <button class="mob-close" id="mob-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="mob-svc-btn" id="mob-svc-btn">Services <svg class="mob-svc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mob-svc-sub" id="mob-svc-sub">
+        <a href="services.html">RevOps &amp; MarTech</a>
+        <a href="staff-augmentation.html">Staff Augmentation</a>
+        <a href="offshore-accounting.html">Offshore Accounting</a>
+      </div>
+      <a href="process.html" class="mob-nav-link active">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="case-studies.html" class="mob-nav-link">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="mob-nav-link">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="mob-nav-link">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </nav>
+    <div class="mob-footer">
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding:148px 0 80px;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;" class="r2col">
+      <div class="reveal">
+        <span class="eyebrow">Process</span>
+        <h1 style="font-size:clamp(52px,7vw,100px);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-top:12px;">Precision<br><em style="color:var(--gold);">Over Speed.</em></h1>
+      </div>
+      <div class="reveal-r">
+        <div style="width:36px;height:1px;background:var(--gold);margin-bottom:28px;"></div>
+        <p style="font-size:15px;color:var(--g1);line-height:1.8;margin-bottom:24px;">We don't start with a proposal. We start with evidence. Our process is built to surface exactly what's holding your revenue back — before we build a single system or write a single line of copy.</p>
+        <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;">
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--white);">12<span style="font-size:18px;color:var(--gold);">wk</span></div><div style="font-size:10px;color:var(--g2);letter-spacing:.1em;text-transform:uppercase;">First Engagement</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--white);">4</div><div style="font-size:10px;color:var(--g2);letter-spacing:.1em;text-transform:uppercase;">Defined Phases</div></div>
+          <div><div style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--white);">1</div><div style="font-size:10px;color:var(--g2);letter-spacing:.1em;text-transform:uppercase;">Revenue Goal</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.r2col{grid-template-columns:1fr!important;gap:32px!important;}}</style>
+
+<!-- STEPS -->
+<section>
+  <div class="container">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:52px;">
+      <div class="reveal">
+        <span class="eyebrow">The Process</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">Four phases.<br><em>One outcome.</em></h2>
+      </div>
+    </div>
+
+    <!-- Step 01 -->
+    <div class="step-block reveal">
+      <div class="step-num-col">
+        <div class="step-big-num">01</div>
+        <div class="step-duration-badge">Weeks 1–2</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Revenue Infrastructure <em>Audit</em></h3>
+        <p class="step-desc">A structured, two-week deep dive into your entire revenue operation. We examine every system, every channel, every data source — not to find fault, but to find leverage. Most businesses have significant revenue potential already present in their existing assets. We find it.</p>
+        <div class="step-items">
+          <div class="step-item"><div class="step-dot"></div>Marketing stack & channel performance review</div>
+          <div class="step-item"><div class="step-dot"></div>Sales process and pipeline architecture audit</div>
+          <div class="step-item"><div class="step-dot"></div>MarTech tools and integration mapping</div>
+          <div class="step-item"><div class="step-dot"></div>Data flow and attribution analysis</div>
+          <div class="step-item"><div class="step-dot"></div>Conversion system review (top to bottom)</div>
+          <div class="step-item"><div class="step-dot"></div>ICP clarity and positioning assessment</div>
+          <div class="step-item"><div class="step-dot"></div>Competitor intelligence and market positioning</div>
+          <div class="step-item"><div class="step-dot"></div>AI and automation capability gap analysis</div>
+        </div>
+        <div class="step-deliverable">Deliverable: Revenue Infrastructure Report</div>
+      </div>
+    </div>
+
+    <!-- Step 02 -->
+    <div class="step-block reveal">
+      <div class="step-num-col">
+        <div class="step-big-num">02</div>
+        <div class="step-duration-badge">Week 3</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Bottleneck <em>Identification</em></h3>
+        <p class="step-desc">We synthesise the audit into a clear, prioritised picture of exactly what's limiting your revenue and by how much. We quantify the gap, rank the opportunities by impact, and align on a strategy before any implementation begins.</p>
+        <div class="step-items">
+          <div class="step-item"><div class="step-dot"></div>Revenue leak identification and quantification</div>
+          <div class="step-item"><div class="step-dot"></div>Channel performance benchmarking</div>
+          <div class="step-item"><div class="step-dot"></div>Technology gap analysis and prioritisation</div>
+          <div class="step-item"><div class="step-dot"></div>Quick wins vs. long-term infrastructure plays</div>
+          <div class="step-item"><div class="step-dot"></div>90-day growth roadmap with KPI targets</div>
+          <div class="step-item"><div class="step-dot"></div>Projected revenue impact per initiative</div>
+        </div>
+        <div class="step-deliverable">Deliverable: Bottleneck & Opportunity Report</div>
+      </div>
+    </div>
+
+    <!-- Step 03 -->
+    <div class="step-block reveal">
+      <div class="step-num-col">
+        <div class="step-big-num">03</div>
+        <div class="step-duration-badge">Weeks 4–10</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">Implementation <em>& Testing</em></h3>
+        <p class="step-desc">We build. Prioritised by impact, executed with precision. Every initiative is tracked against a defined KPI from day one — there is no "launch and hope" in our process. Systems are tested, iterated and confirmed before we move to the next phase.</p>
+        <div class="step-items">
+          <div class="step-item"><div class="step-dot"></div>Marketing system builds and channel activations</div>
+          <div class="step-item"><div class="step-dot"></div>AI automation workflows and agent deployment</div>
+          <div class="step-item"><div class="step-dot"></div>Funnel redesigns and CRO implementation</div>
+          <div class="step-item"><div class="step-dot"></div>MarTech integration and data centralisation</div>
+          <div class="step-item"><div class="step-dot"></div>Brand positioning and content system launch</div>
+          <div class="step-item"><div class="step-dot"></div>Sales pipeline architecture and CRM configuration</div>
+          <div class="step-item"><div class="step-dot"></div>Weekly performance reviews and iteration</div>
+          <div class="step-item"><div class="step-dot"></div>Real-time KPI dashboard deployment</div>
+        </div>
+        <div class="step-deliverable">Deliverable: Live Systems Report</div>
+      </div>
+    </div>
+
+    <!-- Step 04 -->
+    <div class="step-block reveal">
+      <div class="step-num-col">
+        <div class="step-big-num">04</div>
+        <div class="step-duration-badge">Ongoing</div>
+      </div>
+      <div class="step-content">
+        <h3 class="step-title">KPI Tracking <em>& Standardisation</em></h3>
+        <p class="step-desc">What works becomes permanent. Successful strategies are documented as standard operating procedures — ensuring growth is repeatable and doesn't depend on individual effort or our continued involvement. This is the compounding value of systems over campaigns.</p>
+        <div class="step-items">
+          <div class="step-item"><div class="step-dot"></div>Revenue KPI tracking dashboard (real-time)</div>
+          <div class="step-item"><div class="step-dot"></div>Monthly performance review and optimisation</div>
+          <div class="step-item"><div class="step-dot"></div>Standard Operating Procedure documentation</div>
+          <div class="step-item"><div class="step-dot"></div>Team training and handoff protocols</div>
+          <div class="step-item"><div class="step-dot"></div>Quarterly strategy recalibration</div>
+          <div class="step-item"><div class="step-dot"></div>Continuous AI model refinement</div>
+        </div>
+        <div class="step-deliverable">Deliverable: KPI Dashboard & SOP Library</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">Timeline</span>
+      <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">What to expect<br><em>week by week.</em></h2>
+    </div>
+    <div class="timeline-grid">
+      <div class="tl-cell reveal"><div class="tl-week">Week 1–2</div><h3 class="tl-title">Discovery & Audit</h3><p class="tl-body">Access to tools, systems and data. Structured interviews with key stakeholders. Full diagnostic report in progress.</p></div>
+      <div class="tl-cell reveal d1"><div class="tl-week">Week 3</div><h3 class="tl-title">Strategy Alignment</h3><p class="tl-body">Bottleneck report presentation. Priority ranking and initiative selection. KPI targets agreed. Implementation plan signed off.</p></div>
+      <div class="tl-cell reveal d2"><div class="tl-week">Week 4–8</div><h3 class="tl-title">Core Implementation</h3><p class="tl-body">Primary systems built and deployed. Quick wins activated. Weekly reporting begins. First revenue impact visible.</p></div>
+      <div class="tl-cell reveal d3"><div class="tl-week">Week 9–12</div><h3 class="tl-title">Optimisation & Scale</h3><p class="tl-body">Systems tested and refined. Underperforming elements replaced. Winning strategies scaled. SOPs documented for handoff.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">Expectations</span>
+      <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">We operate with<br><em>radical transparency.</em></h2>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-cell reveal"><div class="expect-label">Communication</div><div class="expect-val">Weekly performance calls</div><p class="expect-body">Every week you will receive a structured performance review — what moved, what didn't, and what we're doing about it. No surprises, no spin.</p></div>
+      <div class="expect-cell reveal d1"><div class="expect-label">Reporting</div><div class="expect-val">Real-time KPI dashboard</div><p class="expect-body">You have access to a live revenue dashboard at all times. Every metric we track is visible to you, in real time, with full attribution.</p></div>
+      <div class="expect-cell reveal d2"><div class="expect-label">Accountability</div><div class="expect-val">KPIs, not deliverables</div><p class="expect-body">We are accountable to revenue outcomes, not activity outputs. We track against KPIs we agreed at the start — and if a strategy isn't working, we change it fast.</p></div>
+      <div class="expect-cell reveal d3"><div class="expect-label">Ownership</div><div class="expect-val">Everything belongs to you</div><p class="expect-body">Every system, every SOP, every workflow we build belongs entirely to your business. If we ever part ways, your growth infrastructure remains intact.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <h2>Ready to start your revenue audit?</h2>
+  <a href="contact.html" class="btn-black">Apply for Free Audit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+<footer class="footer">
+  <div class="f-inner">
+    <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
+    <div class="f-links">
+      <a href="index.html" class="f-link">Home</a><a href="services.html" class="f-link">Services</a><a href="process.html" class="f-link">Process</a><a href="about.html" class="f-link">About</a><a href="contact.html" class="f-link">Contact</a>
+    </div>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd.</span>
+  </div>
+</footer>
+<script>
+  const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+</script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>

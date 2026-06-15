@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Resonant Media Solutions</title>
+  <meta name="description" content="Apply for a free revenue audit. B2B scale-ups doing £50K+/month — find out exactly how much revenue you're leaving on the table.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
+    a{text-decoration:none;color:inherit;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.93);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+    .nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+    .nav-links{display:flex;align-items:center;gap:36px;margin-left:56px;}
+    .mob-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;transition:border-color .2s,color .2s;}.mob-btn:hover{border-color:var(--gold);color:var(--white);}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:9998;background:#000;flex-direction:column;}.mob-overlay.open{display:flex;}
+    .mob-overlay-inner{display:flex;flex-direction:column;height:100%;padding:0 32px 40px;}.mob-top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;}.mob-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;line-height:1;}
+    .mob-nav{display:flex;flex-direction:column;gap:0;margin-top:8px;flex:1;overflow-y:auto;}.mob-nav-link{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:color .2s;}.mob-nav-link:hover,.mob-nav-link.active{color:var(--white);}
+    .mob-svc-btn{width:100%;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-align:left;transition:color .2s;}.mob-svc-btn:hover{color:var(--white);}
+    .mob-svc-arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}.mob-svc-sub{display:none;flex-direction:column;padding-left:16px;}.mob-svc-sub.open{display:flex;}.mob-svc-sub a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .2s;}.mob-svc-sub a:hover{color:var(--gold);}
+    .mob-footer{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-direction:column;gap:12px;}.mob-offices{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .nav-link{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--white);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:-20px;background:rgba(0,0,0,.97);border:1px solid var(--border);min-width:220px;padding:8px 0;z-index:200;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);transition:color .15s,background .15s;}
+    .nav-dropdown-menu a:hover{color:var(--white);background:rgba(201,169,110,.06);}
+    .nav-dropdown-menu a.active{color:var(--gold);}
+    .nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:10px 22px;border-radius:1px;transition:background .2s;white-space:nowrap;}
+    .nav-cta:hover{background:var(--gl);}
+    .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;width:100%;}
+    .btn-gold:hover{background:var(--gl);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:13px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:1px solid rgba(255,255,255,0.18);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-black:hover{background:#111;}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal.in{opacity:1;transform:translateY(0);}
+    .reveal-l{opacity:0;transform:translateX(-20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-l.in{opacity:1;transform:translateX(0);}
+    .reveal-r{opacity:0;transform:translateX(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-r.in{opacity:1;transform:translateX(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+    .container{max-width:1400px;margin:0 auto;padding:0 48px;}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    section{padding:112px 0;}
+    /* FORM */
+    .form-wrap{display:grid;grid-template-columns:1fr 380px;gap:1px;background:var(--border);border:1px solid var(--border);}
+    .form-main{background:var(--black);padding:48px;}
+    .form-sidebar{background:var(--surface);display:flex;flex-direction:column;}
+    .sidebar-block{padding:36px;border-bottom:1px solid var(--border);}
+    .sidebar-block:last-child{border-bottom:none;}
+    .sb-title{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--g2);margin-bottom:20px;}
+    /* FORM FIELDS */
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+    .field label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);}
+    .field input,.field select,.field textarea{background:var(--s2);border:1px solid var(--border);border-radius:1px;padding:12px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--white);outline:none;transition:border-color .2s;width:100%;}
+    .field input::placeholder,.field textarea::placeholder{color:var(--g2);}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(201,169,110,.4);}
+    .field select option{background:var(--s2);color:var(--white);}
+    .field textarea{resize:vertical;min-height:110px;}
+    /* RADIO / CHECK GRID */
+    .radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .radio-item{display:flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid var(--border);cursor:pointer;transition:border-color .2s;font-size:12px;color:var(--g1);}
+    .radio-item:hover{border-color:var(--bl);}
+    .radio-item input{accent-color:var(--gold);width:14px;height:14px;flex-shrink:0;cursor:pointer;}
+    /* STEP LIST */
+    .next-steps{display:flex;flex-direction:column;gap:18px;}
+    .next-step{display:flex;align-items:flex-start;gap:14px;}
+    .ns-num{width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0;font-family:'Cormorant Garamond',serif;font-weight:400;}
+    .ns-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px;}
+    .ns-body{font-size:12px;color:var(--g2);line-height:1.5;}
+    /* CONTACT LINKS */
+    .contact-link{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);transition:color .2s;}
+    .contact-link:last-child{border-bottom:none;}
+    .contact-link:hover .cl-label{color:var(--white);}
+    .cl-icon{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s;}
+    .contact-link:hover .cl-icon{border-color:var(--gold);}
+    .cl-label{font-size:13px;color:var(--g1);transition:color .2s;}
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--border);}
+    .faq-item:first-child{border-top:1px solid var(--border);}
+    .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;background:none;border:none;cursor:pointer;text-align:left;transition:color .2s;}
+    .faq-btn:hover .fq{color:var(--white);}
+    .fq{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--g1);line-height:1.2;transition:color .2s;}
+    .faq-item.open .fq{color:var(--white);}
+    .faq-icon{width:20px;height:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+    .faq-item.open .faq-icon{background:var(--gold);border-color:var(--gold);transform:rotate(45deg);}
+    .faq-body{display:none;padding-bottom:22px;}
+    .faq-item.open .faq-body{display:block;}
+    .faq-body p{font-size:14px;color:var(--g1);line-height:1.75;}
+    /* SUCCESS */
+    #form-success{display:none;}
+    /* CTA */
+    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,58px);font-weight:400;color:var(--black);line-height:1.1;max-width:700px;}
+    .footer{background:var(--surface);border-top:1px solid var(--border);padding:48px;}
+    .f-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .f-copy{font-size:11px;color:var(--g2);}
+    .f-links{display:flex;gap:24px;}
+    .f-link{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);transition:color .2s;}
+    .f-link:hover{color:var(--white);}
+    @media(max-width:1024px){
+      .nav-inner,.container{padding-left:24px;padding-right:24px;}
+      .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
+      .cta-band{padding:60px 24px;}.footer{padding-left:24px;padding-right:24px;}
+      .form-wrap{grid-template-columns:1fr;}
+      .form-sidebar{border-top:1px solid var(--border);}
+    }
+    @media(max-width:768px){
+      .field-row{grid-template-columns:1fr;}
+      .radio-grid{grid-template-columns:1fr;}
+      .form-main{padding:28px;}
+      .sidebar-block{padding:28px;}
+      section{padding:72px 0;}
+      .btn-gold,.btn-outline{padding:13px 24px;font-size:10px;}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r{opacity:1!important;transform:none!important;transition:none!important;}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
+      
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" style="cursor:default;">Services &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html">RevOps &amp; MarTech</a>
+          <a href="staff-augmentation.html">Staff Augmentation</a>
+          <a href="offshore-accounting.html">Offshore Accounting</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Free Audit</a>
+      <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mob-overlay" id="mob-overlay">
+  <div class="mob-overlay-inner">
+    <div class="mob-top">
+      <a href="index.html" class="logo"><svg width="170" height="38" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg></a>
+      <button class="mob-close" id="mob-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="mob-svc-btn" id="mob-svc-btn">Services <svg class="mob-svc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mob-svc-sub" id="mob-svc-sub">
+        <a href="services.html">RevOps &amp; MarTech</a>
+        <a href="staff-augmentation.html">Staff Augmentation</a>
+        <a href="offshore-accounting.html">Offshore Accounting</a>
+      </div>
+      <a href="process.html" class="mob-nav-link">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="case-studies.html" class="mob-nav-link">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="mob-nav-link">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="mob-nav-link active">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </nav>
+    <div class="mob-footer">
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section style="padding:148px 0 80px;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;" class="r2col">
+      <div class="reveal">
+        <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;"></span>
+          <span style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#4ade80;">Now accepting Q3 2026 clients</span>
+        </div>
+        <h1 style="font-size:clamp(52px,7vw,100px);font-weight:300;line-height:.95;letter-spacing:-.02em;">Apply for Your<br><em style="color:var(--gold);">Free Audit.</em></h1>
+      </div>
+      <div class="reveal-r">
+        <div style="width:36px;height:1px;background:var(--gold);margin-bottom:28px;"></div>
+        <p style="font-size:15px;color:var(--g1);line-height:1.8;margin-bottom:24px;">We'll analyse your current Marketing, Sales and Technology setup — and tell you exactly how much revenue you're leaving on the table. No pitch. No obligation. Genuine analysis.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--g2);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            No sales pressure — genuine diagnostic first
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--g2);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Response within 24 business hours
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--g2);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            We qualify first — then we talk
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.r2col{grid-template-columns:1fr!important;gap:32px!important;}}</style>
+
+<!-- FORM + SIDEBAR -->
+<section>
+  <div class="container">
+    <div class="form-wrap reveal">
+
+      <!-- FORM -->
+      <div class="form-main">
+        <div style="margin-bottom:32px;">
+          <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);margin-bottom:8px;">Revenue Audit Application</div>
+          <p style="font-size:13px;color:var(--g2);">Takes 3–4 minutes. We read every submission personally.</p>
+        </div>
+
+        <form id="audit-form" onsubmit="handleSubmit(event)">
+          <div class="field-row">
+            <div class="field"><label for="fname">First Name *</label><input type="text" id="fname" placeholder="James" required></div>
+            <div class="field"><label for="lname">Last Name *</label><input type="text" id="lname" placeholder="Thornton" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="email">Business Email *</label><input type="email" id="email" placeholder="james@company.com" required></div>
+            <div class="field"><label for="phone">Phone / WhatsApp</label><input type="tel" id="phone" placeholder="+44 7700 900 000"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="company">Company Name *</label><input type="text" id="company" placeholder="Thornton Group Ltd" required></div>
+            <div class="field"><label for="role">Your Role *</label>
+              <select id="role" required>
+                <option value="" disabled selected>Select role</option>
+                <option>Founder / CEO</option>
+                <option>COO / Director</option>
+                <option>Head of Marketing</option>
+                <option>Head of Sales</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="revenue">Current Monthly Revenue *</label>
+            <select id="revenue" required>
+              <option value="" disabled selected>Select range</option>
+              <option>£50,000 – £100,000 / month</option>
+              <option>£100,000 – £250,000 / month</option>
+              <option>£250,000 – £500,000 / month</option>
+              <option>£500,000+ / month</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Industry *</label>
+            <div class="radio-grid">
+              <label class="radio-item"><input type="radio" name="industry" value="Construction" required>Construction</label>
+              <label class="radio-item"><input type="radio" name="industry" value="Automotive">Automotive</label>
+              <label class="radio-item"><input type="radio" name="industry" value="D2C Brand">D2C Brand</label>
+              <label class="radio-item"><input type="radio" name="industry" value="Education">Education & Training</label>
+              <label class="radio-item"><input type="radio" name="industry" value="B2B Services">B2B Services</label>
+              <label class="radio-item"><input type="radio" name="industry" value="Other">Other</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Biggest Revenue Challenges (select all that apply)</label>
+            <div class="radio-grid">
+              <label class="radio-item"><input type="checkbox" name="challenge" value="leads">Not enough leads</label>
+              <label class="radio-item"><input type="checkbox" name="challenge" value="conversion">Low conversion rates</label>
+              <label class="radio-item"><input type="checkbox" name="challenge" value="data">Scattered data</label>
+              <label class="radio-item"><input type="checkbox" name="challenge" value="positioning">Poor positioning</label>
+              <label class="radio-item"><input type="checkbox" name="challenge" value="automation">Missing automation</label>
+              <label class="radio-item"><input type="checkbox" name="challenge" value="stack">Outdated tech stack</label>
+            </div>
+          </div>
+          <div class="field"><label for="message">Anything else we should know?</label><textarea id="message" placeholder="Tell us about your current setup, goals or specific challenges..."></textarea></div>
+          <div class="field"><label for="source">How did you find us?</label>
+            <select id="source">
+              <option value="" disabled selected>Select option</option>
+              <option>Google Search</option>
+              <option>LinkedIn</option>
+              <option>Referral</option>
+              <option>Social Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-gold" style="margin-top:8px;">Submit Application <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <p style="font-size:11px;color:var(--g2);text-align:center;margin-top:12px;">We respond to every application within 24 business hours.</p>
+        </form>
+
+        <!-- SUCCESS STATE -->
+        <div id="form-success" style="padding:48px 0;text-align:center;">
+          <div style="width:48px;height:48px;border:1px solid rgba(74,222,128,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);margin-bottom:12px;">Application Received.</h3>
+          <p style="font-size:14px;color:var(--g1);max-width:380px;margin:0 auto;line-height:1.7;">We'll review your application and reach out within 24 business hours to schedule your free revenue audit call.</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="form-sidebar">
+        <div class="sidebar-block reveal-r">
+          <div class="sb-title">What Happens Next</div>
+          <div class="next-steps">
+            <div class="next-step">
+              <div class="ns-num">1</div>
+              <div><div class="ns-title">We review your application</div><div class="ns-body">Within 24 hours, we assess fit against our ICP criteria.</div></div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">2</div>
+              <div><div class="ns-title">Discovery call</div><div class="ns-body">30-minute call to understand your business and goals.</div></div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num">3</div>
+              <div><div class="ns-title">Free revenue audit</div><div class="ns-body">We analyse your systems and present specific revenue gaps.</div></div>
+            </div>
+            <div class="next-step">
+              <div class="ns-num" style="border-color:rgba(201,169,110,.3);color:var(--gold);">4</div>
+              <div><div class="ns-title">Proposal (if we're a fit)</div><div class="ns-body">A custom growth partnership proposal — no templates.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-block reveal-r d1">
+          <div class="sb-title">Our Offices</div>
+          <div style="margin-bottom:20px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:20px;">🇬🇧</span>
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--white);">London, UK</div>
+                <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);">European Base</div>
+              </div>
+            </div>
+            <a href="mailto:london@resonantmediasolutions.com" style="font-size:12px;color:var(--gold);">london@resonantmediasolutions.com</a>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:20px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:20px;">🇺🇸</span>
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--white);">New York, USA</div>
+                <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);">North America</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--g2);margin-bottom:6px;line-height:1.6;">110 W 75th Street, New York, NY 10024</div>
+            <a href="mailto:newyork@resonantmediasolutions.com" style="font-size:12px;color:var(--gold);">newyork@resonantmediasolutions.com</a>
+          </div>
+          <div style="border-top:1px solid var(--border);padding-top:20px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span style="font-size:20px;">🇮🇳</span>
+              <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--white);">Gurugram, India</div>
+                <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);">Global HQ</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--g2);margin-bottom:6px;line-height:1.6;">1st Floor, R.K. House, Ward 30, Block B<br>Rajendra Park, Sector 105, Haryana 122001</div>
+            <a href="mailto:india@resonantmediasolutions.com" style="font-size:12px;color:var(--gold);">india@resonantmediasolutions.com</a>
+          </div>
+        </div>
+
+        <div class="sidebar-block reveal-r d2">
+          <div class="sb-title">Direct Contact</div>
+          <a href="mailto:hello@resonantmediasolutions.com" class="contact-link">
+            <div class="cl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <span class="cl-label">hello@resonantmediasolutions.com</span>
+          </a>
+          <a href="tel:+12026883949" class="contact-link">
+            <div class="cl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg></div>
+            <span class="cl-label">+1 202 688 3949 (US)</span>
+          </a>
+          <a href="tel:+918979399868" class="contact-link">
+            <div class="cl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg></div>
+            <span class="cl-label">+91 89793 99868 (India)</span>
+          </a>
+          <a href="https://linkedin.com/company/resonantmediasolutions" class="contact-link" style="border-bottom:none;">
+            <div class="cl-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <span class="cl-label">LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="sidebar-block" style="background:var(--gold);">
+          <div style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-bottom:12px;">Pricing</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--black);line-height:1;margin-bottom:6px;">£9K – £30K</div>
+          <div style="font-size:11px;color:rgba(0,0,0,.5);margin-bottom:4px;">per quarter · scope dependent</div>
+          <div style="font-size:12px;color:rgba(0,0,0,.7);margin-top:12px;line-height:1.5;">Minimum revenue: £50K/month. Quarterly partnership — not a one-off service.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;" class="faq-layout">
+      <div class="reveal-l" style="position:sticky;top:88px;">
+        <span class="eyebrow">FAQ</span>
+        <h2 style="font-size:clamp(32px,4vw,52px);font-weight:300;margin-top:10px;line-height:1.1;">Common<br><em>questions.</em></h2>
+        <p style="font-size:14px;color:var(--g1);line-height:1.75;margin-top:16px;">Everything you need to know before reaching out.</p>
+      </div>
+      <div class="reveal-r">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">Do I need to be doing £50K/month to qualify?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>Yes. Our systems work best when there's an existing revenue foundation to build on. We're not a startup launch service — we help businesses already generating revenue to grow it predictably by 30%+. If you're below £50K/month but growing fast, apply anyway and we'll advise accordingly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">What does the free audit actually involve?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>After a short discovery call, we conduct a structured analysis of your marketing activity, sales funnel, technology stack and data flows. We present a clear picture of your revenue gaps — what's working, what's leaking and where the biggest upside is. This is genuine analysis, not a pitch deck dressed as an audit.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">How long does the partnership engagement last?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>We work in quarterly engagements (3 months each), priced between £9,000 and £30,000 depending on scope. Most clients engage for multiple quarters as we implement, optimise and standardise systems over time. The first quarter focuses on the audit and initial implementation; subsequent quarters build on that foundation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">Do you work with businesses outside the UK?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>Yes. While our offices are in London, New York and Gurugram, we work with B2B businesses internationally. All client engagement is conducted remotely — calls, async collaboration, shared dashboards — with in-person meetings available for clients near our office locations.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">How is Resonant different from a marketing agency?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>A typical agency runs your social media or manages your Google Ads in isolation. We audit and rebuild the entire system that produces revenue — Marketing, Sales and Technology together. We integrate your channels into a unified RevOps structure, introduce AI automation where it creates the biggest leverage, and track performance against defined KPIs. The goal is predictable, scalable growth — not campaign outputs.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span class="fq">We're already working with another agency. Can you work alongside them?</span>
+            <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
+          </button>
+          <div class="faq-body"><p>Yes. Many of our clients come to us because existing agency work isn't integrating properly or producing consistent revenue. We can work alongside or replace existing partners — the audit will make clear what's working and what isn't, and you decide how to proceed based on that evidence.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(max-width:768px){.faq-layout{grid-template-columns:1fr!important;gap:40px!important;}.faq-layout>div:first-child{position:static!important;}}</style>
+
+<footer class="footer">
+  <div class="f-inner">
+    <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
+    <div class="f-links">
+      <a href="index.html" class="f-link">Home</a><a href="services.html" class="f-link">Services</a><a href="process.html" class="f-link">Process</a><a href="about.html" class="f-link">About</a><a href="contact.html" class="f-link">Contact</a>
+    </div>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd. · London · New York · Gurugram</span>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>io.observe(el));
+
+  function toggleFaq(btn){
+    const item=btn.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  }
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    const form = document.getElementById('audit-form');
+    const success = document.getElementById('form-success');
+    const btn = form.querySelector('button[type="submit"]');
+    const originalBtnHTML = btn.innerHTML;
+
+    // Disable button + show loading state
+    btn.disabled = true;
+    btn.innerHTML = 'Submitting… <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0"/></svg>';
+
+    // Collect checkbox challenges
+    const challenges = [...document.querySelectorAll('input[name="challenge"]:checked')]
+      .map(x => x.value).join(', ') || 'None selected';
+
+    const industry = document.querySelector('input[name="industry"]:checked')?.value || 'Not specified';
+
+    const payload = {
+      // ⚠️  Replace the value below with your Web3Forms access key from web3forms.com
+      access_key: '1c1a2ace-1031-47d6-98ed-38a0fe9991ad',
+      subject: `New Audit Application — ${document.getElementById('company').value}`,
+      from_name: 'Resonant Media Solutions Website',
+      replyto: document.getElementById('email').value,
+
+      // Form fields — these appear in the email you receive
+      'Full Name':    `${document.getElementById('fname').value} ${document.getElementById('lname').value}`,
+      'Business Email': document.getElementById('email').value,
+      'Phone / WhatsApp': document.getElementById('phone').value || '—',
+      'Company':      document.getElementById('company').value,
+      'Role':         document.getElementById('role').value,
+      'Monthly Revenue': document.getElementById('revenue').value,
+      'Industry':     industry,
+      'Challenges':   challenges,
+      'Message':      document.getElementById('message').value || '—',
+      'Found Us Via': document.getElementById('source').value || '—',
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        // Fade form out, show success
+        form.style.transition = 'opacity .3s';
+        form.style.opacity = '0';
+        setTimeout(() => {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          success.style.opacity = '0';
+          requestAnimationFrame(() => {
+            success.style.transition = 'opacity .4s';
+            success.style.opacity = '1';
+          });
+        }, 300);
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.innerHTML = originalBtnHTML;
+      // Show inline error without alert()
+      let errEl = document.getElementById('form-error');
+      if (!errEl) {
+        errEl = document.createElement('p');
+        errEl.id = 'form-error';
+        errEl.style.cssText = 'color:#f87171;font-size:12px;text-align:center;margin-top:12px;';
+        btn.parentNode.insertBefore(errEl, btn.nextSibling);
+      }
+      errEl.textContent = 'Something went wrong. Please email us directly at hello@resonantmediasolutions.com';
+    }
+  }
+</script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>

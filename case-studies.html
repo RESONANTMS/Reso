@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies — Resonant Media Solutions</title>
+  <meta name="description" content="Real results for real businesses. Read how Resonant Media Solutions delivered 30%+ revenue growth across financial services, automotive, education and D2C brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
+    a{text-decoration:none;color:inherit;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.93);backdrop-filter:blur(20px);}
+    .nav-inner{max-width:1400px;margin:0 auto;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);}
+    .nav-links{display:flex;align-items:center;gap:36px;margin-left:56px;}
+    .mob-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;transition:border-color .2s,color .2s;}.mob-btn:hover{border-color:var(--gold);color:var(--white);}
+    .mob-overlay{display:none;position:fixed;inset:0;z-index:9998;background:#000;flex-direction:column;}.mob-overlay.open{display:flex;}
+    .mob-overlay-inner{display:flex;flex-direction:column;height:100%;padding:0 32px 40px;}.mob-top{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0;}.mob-close{background:none;border:1px solid var(--border);cursor:pointer;color:var(--g1);padding:7px 9px;border-radius:1px;line-height:1;}
+    .mob-nav{display:flex;flex-direction:column;gap:0;margin-top:8px;flex:1;overflow-y:auto;}.mob-nav-link{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-decoration:none;transition:color .2s;}.mob-nav-link:hover,.mob-nav-link.active{color:var(--white);}
+    .mob-svc-btn{width:100%;background:none;border:none;cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--g1);padding:16px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;text-align:left;transition:color .2s;}.mob-svc-btn:hover{color:var(--white);}
+    .mob-svc-arrow{transition:transform .3s cubic-bezier(.16,1,.3,1);}.mob-svc-sub{display:none;flex-direction:column;padding-left:16px;}.mob-svc-sub.open{display:flex;}.mob-svc-sub a{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:color .2s;}.mob-svc-sub a:hover{color:var(--gold);}
+    .mob-footer{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-direction:column;gap:12px;}.mob-offices{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--g2);}
+    .nav-link{font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--g1);transition:color .2s;}
+    .nav-link:hover,.nav-link.active{color:var(--white);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-menu{display:none;position:absolute;top:100%;left:-20px;background:rgba(0,0,0,.97);border:1px solid var(--border);min-width:220px;padding:8px 0;z-index:200;}
+    .nav-dropdown:hover .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu a{display:block;padding:10px 20px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g1);transition:color .15s,background .15s;}
+    .nav-dropdown-menu a:hover{color:var(--white);background:rgba(201,169,110,.06);}
+    .nav-dropdown-menu a.active{color:var(--gold);}
+    .nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:10px 22px;border-radius:1px;transition:background .2s;}
+    .nav-cta:hover{background:var(--gl);}
+    .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-gold:hover{background:var(--gl);transform:translateY(-1px);}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--white);padding:13px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;border:1px solid rgba(255,255,255,0.18);}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-black{display:inline-flex;align-items:center;gap:10px;background:var(--black);color:var(--white);padding:14px 32px;border-radius:1px;font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:all .25s;font-family:'Plus Jakarta Sans',sans-serif;}
+    .btn-black:hover{background:#111;transform:translateY(-1px);}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal.in{opacity:1;transform:translateY(0);}
+    .reveal-l{opacity:0;transform:translateX(-20px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
+    .reveal-l.in{opacity:1;transform:translateX(0);}
+    .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}
+    @keyframes heroUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+    .hero-anim{animation:heroUp .9s cubic-bezier(.16,1,.3,1) both;}
+    .ha1{animation-delay:.1s;}.ha2{animation-delay:.25s;}.ha3{animation-delay:.4s;}.ha4{animation-delay:.55s;}
+    @media(prefers-reduced-motion:reduce){.hero-anim{animation:none!important;opacity:1!important;}}
+    .container{max-width:1400px;margin:0 auto;padding:0 48px;}
+    .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+    .rule-gold{width:36px;height:1px;background:var(--gold);margin-bottom:28px;}
+    /* PAGE HERO */
+    .page-hero{padding:140px 0 80px;border-bottom:1px solid var(--border);}
+    /* STATS STRIP */
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-top:none;}
+    .ss-cell{background:var(--black);padding:28px 32px;}
+    .ss-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1;}
+    .ss-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-top:6px;}
+    /* CASE STUDY BLOCK */
+    .cs-block-wrap{border:1px solid var(--border);margin-bottom:1px;}
+    .cs-header{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:start;padding:36px 40px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .2s;}
+    .cs-header:hover{background:rgba(201,169,110,.025);}
+    .cs-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--g3);line-height:1;}
+    .cs-header-right{text-align:right;}
+    .cs-body{display:none;border-top:1px solid var(--border);}
+    .cs-body.open{display:block;}
+    .cs-inner{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+    .cs-col{background:var(--black);padding:40px;}
+    .cs-section-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);margin-bottom:16px;}
+    .cs-text{font-size:13px;color:var(--g1);line-height:1.8;}
+    .cs-arrow{font-size:13px;color:var(--g2);margin:6px 0;padding-left:12px;position:relative;}
+    .cs-arrow::before{content:"→";position:absolute;left:0;color:var(--gold);}
+    .cs-results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-top:1px solid var(--border);}
+    .cs-res-cell{background:var(--black);padding:28px 24px;text-align:center;}
+    .cs-res-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--gold);line-height:1;}
+    .cs-res-label{font-size:10px;color:var(--g2);margin-top:6px;letter-spacing:.06em;text-transform:uppercase;}
+    .cs-testimonial{padding:36px 40px;border-top:1px solid var(--border);background:var(--surface);}
+    .cs-quote-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--white);line-height:1.65;margin-bottom:14px;}
+    .cs-quote-attr{font-size:12px;color:var(--g2);}
+    /* LOGO ICON in header */
+    .cs-logo-icon{color:var(--g3);transition:color .2s;}
+    .cs-header:hover .cs-logo-icon{color:var(--gold);}
+    /* TOGGLE ICON */
+    .cs-toggle{width:32px;height:32px;border:1px solid var(--border);border-radius:1px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+    .cs-toggle svg{transition:transform .3s;}
+    .cs-header.open .cs-toggle{background:var(--gold);border-color:var(--gold);}
+    .cs-header.open .cs-toggle svg{transform:rotate(45deg);}
+    .cs-header.open .cs-toggle svg path{stroke:#000;}
+    /* CTA */
+    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,58px);font-weight:400;color:var(--black);line-height:1.1;max-width:700px;}
+    /* FOOTER */
+    .footer{background:var(--surface);border-top:1px solid var(--border);}
+    .footer-inner{max-width:1400px;margin:0 auto;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .f-copy{font-size:11px;color:var(--g2);}
+    .f-link{font-size:11px;color:var(--g1);transition:color .2s;}
+    .f-link:hover{color:var(--white);}
+    @media(max-width:1024px){
+      .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
+    }
+    @media(max-width:900px){
+      .cs-inner{grid-template-columns:1fr;}
+      .cs-results-grid{grid-template-columns:1fr 1fr;}
+      .stats-strip{grid-template-columns:repeat(2,1fr);}
+      .cs-header{grid-template-columns:48px 1fr auto;}
+      .container{padding:0 24px;}
+    }
+    @media(max-width:640px){
+      .cta-band{padding:56px 24px;}
+      .footer-inner{padding:24px;}
+      .btn-gold,.btn-outline{padding:13px 24px;font-size:10px;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .reveal,.reveal-l{opacity:1!important;transform:none!important;transition:none!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
+      
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <a class="nav-link" style="cursor:default;">Services &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html">RevOps &amp; MarTech</a>
+          <a href="staff-augmentation.html">Staff Augmentation</a>
+          <a href="offshore-accounting.html">Offshore Accounting</a>
+        </div>
+      </div>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="case-studies.html" class="nav-link active">Case Studies</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="contact.html" class="nav-cta">Free Audit</a>
+      <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mob-overlay" id="mob-overlay">
+  <div class="mob-overlay-inner">
+    <div class="mob-top">
+      <a href="index.html" class="logo"><svg width="170" height="38" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg></a>
+      <button class="mob-close" id="mob-close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="index.html" class="mob-nav-link">Home <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button class="mob-svc-btn" id="mob-svc-btn">Services <svg class="mob-svc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="mob-svc-sub" id="mob-svc-sub">
+        <a href="services.html">RevOps &amp; MarTech</a>
+        <a href="staff-augmentation.html">Staff Augmentation</a>
+        <a href="offshore-accounting.html">Offshore Accounting</a>
+      </div>
+      <a href="process.html" class="mob-nav-link">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="case-studies.html" class="mob-nav-link active">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="about.html" class="mob-nav-link">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="contact.html" class="mob-nav-link">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </nav>
+    <div class="mob-footer">
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div style="max-width:820px;">
+      <div class="rule-gold hero-anim ha1"></div>
+      <div class="eyebrow hero-anim ha1">Case Studies</div>
+      <h1 style="font-size:clamp(54px,8vw,108px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-top:16px;margin-bottom:28px;" class="hero-anim ha2">
+        Proof, not<br><em style="color:var(--gold);">promises.</em>
+      </h1>
+      <p style="font-size:16px;color:var(--g1);max-width:520px;line-height:1.8;" class="hero-anim ha3">Four B2B businesses across the USA and Canada. Real challenges, real systems, measurable outcomes. No vanity metrics — only revenue results that compound over time.</p>
+    </div>
+  </div>
+  <!-- Stats strip -->
+  <div class="container" style="margin-top:52px;">
+    <div class="stats-strip">
+      <div class="ss-cell reveal"><div class="ss-num">4</div><div class="ss-label">Client Case Studies</div></div>
+      <div class="ss-cell reveal d1"><div class="ss-num">$2.1M+</div><div class="ss-label">Combined New Revenue</div></div>
+      <div class="ss-cell reveal d2"><div class="ss-num">38%</div><div class="ss-label">Avg. Sales Cycle Reduction</div></div>
+      <div class="ss-cell reveal d3"><div class="ss-num">90</div><div class="ss-label">Days to First Results</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES — ACCORDION -->
+<section style="padding:80px 0;">
+  <div class="container">
+
+    <!-- CS 1: NorthBridge Capital -->
+    <div class="cs-block-wrap reveal">
+      <div class="cs-header" id="h1" onclick="toggleCS(1)">
+        <div class="cs-num cs-logo-icon">
+          <svg width="36" height="26" viewBox="0 0 36 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 24 Q2 6 18 6 Q34 6 34 24"/><line x1="2" y1="24" x2="34" y2="24"/><line x1="10" y1="24" x2="10" y2="15"/><line x1="26" y1="24" x2="26" y2="15"/></svg>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Financial Services · New York, USA</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;color:var(--white);line-height:1.1;">NorthBridge Capital</h2>
+          <p style="font-size:12px;color:var(--g2);margin-top:6px;">Investment advisory firm · 42 employees · 90-day engagement</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="text-align:right;display:none;" class="cs-header-stat">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--gold);">$340K</div>
+            <div style="font-size:10px;color:var(--g2);letter-spacing:.06em;text-transform:uppercase;">New ARR</div>
+          </div>
+          <div class="cs-toggle" id="t1">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="cs-body" id="b1">
+        <div class="cs-inner">
+          <div class="cs-col">
+            <div class="cs-section-label">The Challenge</div>
+            <p class="cs-text">NorthBridge had no ICP clarity, were spending $28K/month on paid media with zero traceable attribution, and their sales team was chasing cold leads from a spreadsheet with no CRM discipline. Pipeline was entirely opaque. Revenue growth had stalled at 6% YoY for two consecutive years despite increasing ad spend.</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Key Pain Points</div>
+              <p class="cs-arrow">No CRM — all pipeline in spreadsheets</p>
+              <p class="cs-arrow">$28K/month ad spend, zero attribution</p>
+              <p class="cs-arrow">Sales team chasing cold leads manually</p>
+              <p class="cs-arrow">Revenue stalled at 6% growth for 2 years</p>
+              <p class="cs-arrow">No ICP definition or lead qualification</p>
+            </div>
+          </div>
+          <div class="cs-col">
+            <div class="cs-section-label">Our Approach</div>
+            <p class="cs-arrow">Full 2-week revenue audit across all touchpoints</p>
+            <p class="cs-arrow">ICP definition — identified 3 core buyer personas</p>
+            <p class="cs-arrow">HubSpot CRM rebuild with 7-stage custom pipeline</p>
+            <p class="cs-arrow">Attribution layer across Google, Meta and LinkedIn</p>
+            <p class="cs-arrow">LinkedIn authority content system (4 posts/week)</p>
+            <p class="cs-arrow">AI-assisted outreach sequences for warm prospects</p>
+            <p class="cs-arrow">Monthly revenue dashboard for exec team</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Tools Deployed</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);letter-spacing:.04em;">HubSpot CRM</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);letter-spacing:.04em;">Apollo.io</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);letter-spacing:.04em;">LinkedIn Sales Nav</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);letter-spacing:.04em;">Google Analytics 4</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);letter-spacing:.04em;">ActiveCampaign</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-results-grid">
+          <div class="cs-res-cell"><div class="cs-res-num">42%</div><div class="cs-res-label">Qualified Pipeline Growth</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">31%</div><div class="cs-res-label">Sales Cycle Reduction</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">$340K</div><div class="cs-res-label">New ARR in 90 Days</div></div>
+        </div>
+        <div class="cs-testimonial">
+          <div class="cs-quote-text">"Resonant did what three previous agencies couldn't — they made our pipeline visible. For the first time we know exactly where every deal stands and why. We went from guessing to knowing."</div>
+          <div class="cs-quote-attr">— Daniel Hargrove, VP Sales · NorthBridge Capital, New York</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CS 2: Meridian Auto Group -->
+    <div class="cs-block-wrap reveal d1">
+      <div class="cs-header" id="h2" onclick="toggleCS(2)">
+        <div class="cs-num cs-logo-icon">
+          <svg width="34" height="26" viewBox="0 0 34 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 24 L2 4 L17 18 L32 4 L32 24"/></svg>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Automotive · Dallas, Texas, USA</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;color:var(--white);line-height:1.1;">Meridian Auto Group</h2>
+          <p style="font-size:12px;color:var(--g2);margin-top:6px;">Multi-franchise dealership group · 180 employees · 6-month engagement</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="cs-toggle" id="t2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="cs-body" id="b2">
+        <div class="cs-inner">
+          <div class="cs-col">
+            <div class="cs-section-label">The Challenge</div>
+            <p class="cs-text">Seven dealership locations, each running independent marketing budgets with five different freelancers and no shared data infrastructure. Cost-per-lead on Google and Meta had risen 60% over 18 months. Leadership had no real-time visibility into which location, channel or vehicle segment was generating the best ROI. Revenue growth had plateaued for three quarters.</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Key Pain Points</div>
+              <p class="cs-arrow">7 locations, 5 freelancers — zero coordination</p>
+              <p class="cs-arrow">CPL up 60% over 18 months</p>
+              <p class="cs-arrow">No shared data infrastructure across locations</p>
+              <p class="cs-arrow">Zero attribution by location or vehicle segment</p>
+              <p class="cs-arrow">Revenue flat for 3 consecutive quarters</p>
+            </div>
+          </div>
+          <div class="cs-col">
+            <div class="cs-section-label">Our Approach</div>
+            <p class="cs-arrow">Central intelligence system unifying all 7 locations</p>
+            <p class="cs-arrow">Unified paid media strategy with cross-location attribution</p>
+            <p class="cs-arrow">AI-powered inventory-based dynamic ad automation</p>
+            <p class="cs-arrow">Lead scoring model segmented by vehicle category</p>
+            <p class="cs-arrow">Automated follow-up sequences by segment & intent</p>
+            <p class="cs-arrow">Live revenue dashboard visible to all stakeholders</p>
+            <p class="cs-arrow">Consolidated agency relationship — one point of contact</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Tools Deployed</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Google Ads</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Meta Ads</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Dealer.com</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Salesforce</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Looker Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-results-grid">
+          <div class="cs-res-cell"><div class="cs-res-num">38%</div><div class="cs-res-label">Ad Spend Reduction</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">67%</div><div class="cs-res-label">Lead-to-Sale Improvement</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">$1.2M</div><div class="cs-res-label">Revenue Increase YoY</div></div>
+        </div>
+        <div class="cs-testimonial">
+          <div class="cs-quote-text">"We went from seven marketing black boxes to one clear system. Our cost per sold unit dropped by more than a third and we finally understand where our best customers come from. The visibility alone changed how we manage this business."</div>
+          <div class="cs-quote-attr">— Rachel Fontaine, CEO · Meridian Auto Group, Dallas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CS 3: Summit Education Partners -->
+    <div class="cs-block-wrap reveal d2">
+      <div class="cs-header" id="h3" onclick="toggleCS(3)">
+        <div class="cs-num cs-logo-icon">
+          <svg width="34" height="26" viewBox="0 0 34 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 25 L17 2 L33 25Z"/><path d="M10 25 L17 13 L24 25"/></svg>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Education & Training · Ontario, Canada</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;color:var(--white);line-height:1.1;">Summit Education Partners</h2>
+          <p style="font-size:12px;color:var(--g2);margin-top:6px;">Professional certification provider · 28 employees · 4-month engagement</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="cs-toggle" id="t3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="cs-body" id="b3">
+        <div class="cs-inner">
+          <div class="cs-col">
+            <div class="cs-section-label">The Challenge</div>
+            <p class="cs-text">Summit was almost entirely referral-dependent with no structured digital presence, no nurture system and no ability to predict revenue month-to-month. Enrollment cycles were long, erratic and deeply dependent on two salespeople. Leadership wanted to scale without proportionally scaling headcount — but had no infrastructure to support that goal.</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Key Pain Points</div>
+              <p class="cs-arrow">95%+ revenue from word-of-mouth referrals</p>
+              <p class="cs-arrow">No digital marketing presence or SEO visibility</p>
+              <p class="cs-arrow">No email nurture — just a monthly newsletter</p>
+              <p class="cs-arrow">Enrollment cycles 3–6 months, no predictability</p>
+              <p class="cs-arrow">2 salespeople doing all qualification manually</p>
+            </div>
+          </div>
+          <div class="cs-col">
+            <div class="cs-section-label">Our Approach</div>
+            <p class="cs-arrow">Brand positioning overhaul — clear authority messaging</p>
+            <p class="cs-arrow">Full SWEPS rollout: SEO, LinkedIn, AEO content strategy</p>
+            <p class="cs-arrow">AI-powered email automation across 5 enrollment segments</p>
+            <p class="cs-arrow">Webinar funnel — top-of-funnel to enrollment pipeline</p>
+            <p class="cs-arrow">CRM implementation with predictive lead scoring</p>
+            <p class="cs-arrow">Monthly enrollment forecast model and reporting</p>
+            <p class="cs-arrow">Lead qualification chatbot to pre-screen applicants</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Tools Deployed</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Klaviyo</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">HubSpot</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Webflow</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Typeform</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Ahrefs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-results-grid">
+          <div class="cs-res-cell"><div class="cs-res-num">3.2×</div><div class="cs-res-label">Inbound Lead Growth</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">28%</div><div class="cs-res-label">Revenue Growth (Q1)</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">71%</div><div class="cs-res-label">Faster Enrollment Cycle</div></div>
+        </div>
+        <div class="cs-testimonial">
+          <div class="cs-quote-text">"We finally have a predictable enrollment pipeline. The systems Resonant built mean we're not dependent on referrals or the heroics of individual people anymore. For the first time, I can actually forecast next quarter."</div>
+          <div class="cs-quote-attr">— Sarah Okafor, Founder · Summit Education Partners, Toronto</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CS 4: Cascade D2C Brands -->
+    <div class="cs-block-wrap reveal d3">
+      <div class="cs-header" id="h4" onclick="toggleCS(4)">
+        <div class="cs-num cs-logo-icon">
+          <svg width="36" height="26" viewBox="0 0 36 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 8 Q9 1 18 8 Q27 15 35 8"/><path d="M1 18 Q9 11 18 18 Q27 25 35 18"/></svg>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">D2C E-commerce · Vancouver, Canada</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:300;color:var(--white);line-height:1.1;">Cascade D2C Brands</h2>
+          <p style="font-size:12px;color:var(--g2);margin-top:6px;">Direct-to-consumer outdoor lifestyle brand · 55 employees · 5-month engagement</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div class="cs-toggle" id="t4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="cs-body" id="b4">
+        <div class="cs-inner">
+          <div class="cs-col">
+            <div class="cs-section-label">The Challenge</div>
+            <p class="cs-text">Rising customer acquisition costs driven by platform CPMs increasing 60% YoY, poor customer retention (average LTV of just 1.4 purchases), no lifecycle marketing to speak of and a Klaviyo account that was essentially sending one monthly newsletter. Revenue was growing but margins were being destroyed by acquisition spend. The business was scaling without becoming more profitable.</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Key Pain Points</div>
+              <p class="cs-arrow">CAC up 60% YoY due to rising CPMs</p>
+              <p class="cs-arrow">Average LTV of only 1.4 purchases per customer</p>
+              <p class="cs-arrow">Klaviyo account — one monthly newsletter, nothing else</p>
+              <p class="cs-arrow">No retention strategy — pure acquisition focus</p>
+              <p class="cs-arrow">Revenue growing but margin shrinking</p>
+            </div>
+          </div>
+          <div class="cs-col">
+            <div class="cs-section-label">Our Approach</div>
+            <p class="cs-arrow">Full email lifecycle automation across 8 behavioural segments</p>
+            <p class="cs-arrow">SMS nurture integration for high-intent signals</p>
+            <p class="cs-arrow">CRO overhaul of product pages and cart/checkout flow</p>
+            <p class="cs-arrow">Customer data platform (CDP) implementation</p>
+            <p class="cs-arrow">Loyalty & repurchase incentive system design</p>
+            <p class="cs-arrow">Retention-focused paid strategy — budget shifted to re-engagement</p>
+            <p class="cs-arrow">Predictive LTV modelling by customer cohort</p>
+            <div style="margin-top:24px;">
+              <div class="cs-section-label">Tools Deployed</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;">
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Klaviyo</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Postscript (SMS)</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Triple Whale</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Loyalty Lion</span>
+                <span style="font-size:10px;padding:4px 10px;border:1px solid var(--bl);color:var(--g1);">Shopify Plus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-results-grid">
+          <div class="cs-res-cell"><div class="cs-res-num">44%</div><div class="cs-res-label">CAC Reduction</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">58%</div><div class="cs-res-label">LTV Increase</div></div>
+          <div class="cs-res-cell"><div class="cs-res-num">+180%</div><div class="cs-res-label">Email Revenue</div></div>
+        </div>
+        <div class="cs-testimonial">
+          <div class="cs-quote-text">"Our email channel went from an afterthought to our highest-margin revenue stream. The team at Resonant approached retention like engineers, not marketers. That framing changed everything about how we thought about growth."</div>
+          <div class="cs-quote-attr">— James Whitfield, Head of Marketing · Cascade D2C Brands, Vancouver</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band reveal">
+  <h2>Ready to become our next case study?</h2>
+  <a href="contact.html" class="btn-black">Apply for Free Audit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;">
+      <a href="index.html" class="f-link">Home</a>
+      <a href="services.html" class="f-link">Services</a>
+      <a href="process.html" class="f-link">Process</a>
+      <a href="about.html" class="f-link">About</a>
+      <a href="contact.html" class="f-link">Contact</a>
+    </div>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd.</span>
+  </div>
+</footer>
+
+<script>
+  function toggleCS(n){
+    const h=document.getElementById('h'+n);
+    const b=document.getElementById('b'+n);
+    const t=document.getElementById('t'+n);
+    const isOpen=b.classList.contains('open');
+    // close all
+    [1,2,3,4].forEach(i=>{
+      document.getElementById('b'+i).classList.remove('open');
+      document.getElementById('h'+i).classList.remove('open');
+    });
+    if(!isOpen){b.classList.add('open');h.classList.add('open');}
+  }
+
+  // Open first case study by default
+  toggleCS(1);
+
+  const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.06,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.reveal,.reveal-l').forEach(el=>io.observe(el));
+</script>
+<script src="js/mobile-nav.js"></script>
+<script src="js/anim.js"></script>
+</body>
+</html>
