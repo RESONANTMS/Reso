@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offshore Accounting &amp; Bookkeeping — Resonant Media Solutions</title>
-  <meta name="description" content="Dedicated offshore accounting teams for growing businesses. Bookkeeping, payroll, financial reporting, tax preparation support and CFO advisory — at 60–70% lower cost.">
+  <title>Finance Operations Partnership — Resonant Media Solutions</title>
+  <meta name="description" content="A dedicated finance operations partner for investment firms, management companies, and B2B scale-ups. Reliable reporting, audit readiness, and scalable financial processes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;}
+    :root{--black:#000;--surface:#0a0a0a;--s2:#111;--border:rgba(255,255,255,0.07);--bl:rgba(255,255,255,0.12);--gold:#C9A96E;--gl:#DFC28E;--white:#fff;--g1:#AAAAAA;--g2:#666;--g3:#2a2a2a;--g4:#141414;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     body{background:var(--black);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
     h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;}
@@ -54,104 +54,119 @@
     .d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
     @keyframes heroUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
     .hero-anim{animation:heroUp .9s cubic-bezier(.16,1,.3,1) both;}
-    .ha1{animation-delay:.1s;}.ha2{animation-delay:.25s;}.ha3{animation-delay:.4s;}
+    .ha1{animation-delay:.1s;}.ha2{animation-delay:.25s;}.ha3{animation-delay:.4s;}.ha4{animation-delay:.55s;}
     /* LAYOUT */
     .container{max-width:1400px;margin:0 auto;padding:0 48px;}
     .eyebrow{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
     .rule-gold{width:36px;height:1px;background:var(--gold);margin-bottom:28px;}
     section{padding:104px 0;}
     /* HERO */
-    .page-hero{padding:148px 0 80px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
-    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 30% 40%,rgba(201,169,110,.05) 0%,transparent 65%);pointer-events:none;}
-    /* STATS STRIP */
-    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:64px;}
-    .ss-cell{background:var(--black);padding:28px 32px;}
-    .ss-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold);line-height:1;}
-    .ss-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-top:6px;}
-    /* SERVICES GRID */
-    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .svc-card{background:var(--black);padding:36px 32px;transition:background .2s;}
-    .svc-card:hover{background:var(--surface);}
-    .svc-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:border-color .2s;}
-    .svc-card:hover .svc-icon{border-color:var(--gold);}
-    .svc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;}
-    .svc-body{font-size:12px;color:var(--g1);line-height:1.8;margin-bottom:18px;}
-    .svc-list{list-style:none;padding:0;}
-    .svc-list li{font-size:11px;color:var(--g2);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start;}
-    .svc-list li:last-child{border-bottom:none;}
-    .svc-list li::before{content:'→';color:var(--gold);flex-shrink:0;font-size:11px;}
-    /* TOOLS */
-    .tools-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .tool-cell{background:var(--black);padding:28px 20px;text-align:center;transition:background .2s;}
-    .tool-cell:hover{background:var(--surface);}
-    .tool-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white);margin-bottom:6px;transition:color .2s;}
-    .tool-cell:hover .tool-logo{color:var(--gold);}
-    .tool-type{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);}
-    /* PROCESS STEPS */
-    .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .proc-step{background:var(--black);padding:32px 28px;}
-    .proc-n{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:16px;}
-    .proc-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px;}
-    .proc-body{font-size:12px;color:var(--g1);line-height:1.8;}
+    .page-hero{padding:148px 0 88px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 20% 50%,rgba(201,169,110,.06) 0%,transparent 65%);pointer-events:none;}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;}
+    /* PRINCIPLE STRIP */
+    .principle-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:72px;}
+    .ps-cell{background:var(--black);padding:32px 36px;position:relative;}
+    .ps-num{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:300;color:var(--gold);letter-spacing:.08em;margin-bottom:10px;}
+    .ps-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2;}
+    .ps-body{font-size:12px;color:var(--g1);line-height:1.8;}
+    /* TWO-COL LAYOUT */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+    .two-col-panel{background:var(--black);padding:52px 48px;}
+    /* MODEL STEPS */
+    .model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .model-card{background:var(--black);padding:36px 32px;transition:background .25s;}
+    .model-card:hover{background:var(--surface);}
+    .model-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;line-height:1;color:var(--g3);margin-bottom:16px;transition:color .25s;}
+    .model-card:hover .model-num{color:rgba(201,169,110,.3);}
+    .model-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--white);margin-bottom:10px;}
+    .model-body{font-size:12px;color:var(--g1);line-height:1.85;margin-bottom:16px;}
+    .model-list{list-style:none;}
+    .model-list li{font-size:11px;color:var(--g2);padding:5px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:flex-start;}
+    .model-list li:last-child{border-bottom:none;}
+    .model-list li::before{content:'→';color:var(--gold);flex-shrink:0;}
+    /* FLOW DIAGRAM */
+    .flow-chain{display:flex;flex-direction:column;align-items:center;gap:0;}
+    .flow-node{width:100%;max-width:480px;background:var(--g4);border:1px solid var(--border);padding:18px 28px;display:flex;align-items:center;gap:20px;transition:border-color .2s;}
+    .flow-node:hover{border-color:rgba(201,169,110,.25);}
+    .flow-node.highlight{background:var(--gold);border-color:var(--gold);}
+    .flow-node-num{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--g2);min-width:24px;}
+    .flow-node.highlight .flow-node-num{color:rgba(0,0,0,.5);}
+    .flow-node-label{font-size:13px;font-weight:500;color:var(--white);}
+    .flow-node.highlight .flow-node-label{color:var(--black);}
+    .flow-node-sub{font-size:10px;color:var(--g2);margin-top:2px;letter-spacing:.04em;}
+    .flow-node.highlight .flow-node-sub{color:rgba(0,0,0,.55);}
+    .flow-arrow{width:1px;height:22px;background:var(--g3);position:relative;display:flex;justify-content:center;}
+    .flow-arrow::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid var(--g3);}
+    .flow-arrow.gold-arrow{background:var(--gold);}
+    .flow-arrow.gold-arrow::after{border-top-color:var(--gold);}
+    /* SCOPE TABLE */
+    .scope-table{width:100%;border-collapse:collapse;}
+    .scope-table tr{border-bottom:1px solid var(--border);}
+    .scope-table tr:last-child{border-bottom:none;}
+    .scope-table td{padding:14px 0;font-size:12px;vertical-align:top;}
+    .scope-table td:first-child{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;min-width:180px;padding-right:24px;}
+    .scope-table td:last-child{color:var(--g1);line-height:1.7;}
     /* PRICING */
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .price-card{background:var(--black);padding:40px 36px;}
-    .price-tier{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--white);margin-bottom:6px;}
-    .price-val{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold);line-height:1;margin:16px 0 6px;}
-    .price-period{font-size:11px;color:var(--g2);letter-spacing:.06em;margin-bottom:24px;}
-    .price-feat{font-size:12px;color:var(--g1);padding:9px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+    .price-card{background:var(--black);padding:44px 40px;}
+    .price-card.featured{background:var(--surface);border:1px solid rgba(201,169,110,.3);position:relative;}
+    .price-badge{position:absolute;top:0;right:0;background:var(--gold);color:#000;font-size:9px;font-weight:700;letter-spacing:.12em;padding:5px 14px;text-transform:uppercase;}
+    .price-tier{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
+    .price-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);margin-bottom:20px;}
+    .price-val{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--white);line-height:1;}
+    .price-val sup{font-size:22px;vertical-align:top;margin-top:10px;color:var(--gold);}
+    .price-period{font-size:11px;color:var(--g2);letter-spacing:.06em;margin-top:6px;margin-bottom:28px;}
+    .price-feat{font-size:12px;color:var(--g1);padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;line-height:1.55;}
     .price-feat:last-of-type{border-bottom:none;}
-    .pf-tick{color:var(--gold);flex-shrink:0;}
-    /* COMPLIANCE */
-    .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .comp-cell{background:var(--black);padding:28px 24px;}
-    .comp-label{font-size:12px;color:var(--g1);margin-bottom:8px;}
-    .comp-detail{font-size:10px;color:var(--g2);line-height:1.7;}
-    .comp-badge{display:inline-flex;align-items:center;gap:5px;margin-bottom:14px;}
-    .comp-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;}
-    /* TESTIMONIAL */
-    .testimonial-block{background:var(--surface);border:1px solid var(--border);padding:52px 56px;}
-    .t-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,30px);font-weight:300;color:var(--white);line-height:1.5;font-style:italic;margin-bottom:28px;}
-    .t-attr{display:flex;align-items:center;gap:16px;}
-    .t-line{width:32px;height:1px;background:var(--gold);}
-    /* INDUSTRIES */
-    .ind-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .ind-cell{background:var(--black);padding:22px 20px;transition:background .2s;}
-    .ind-cell:hover{background:var(--surface);}
-    .ind-name{font-size:12px;color:var(--g1);margin-bottom:8px;transition:color .2s;}
-    .ind-cell:hover .ind-name{color:var(--white);}
-    .ind-line{width:16px;height:1px;background:var(--g3);transition:background .2s,width .3s;}
-    .ind-cell:hover .ind-line{background:var(--gold);width:28px;}
+    .pf-tick{color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px;}
+    /* ICP */
+    .icp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .icp-card{background:var(--black);padding:36px 32px;transition:background .2s;}
+    .icp-card:hover{background:var(--surface);}
+    .icp-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--white);margin-bottom:12px;}
+    .icp-body{font-size:12px;color:var(--g1);line-height:1.8;margin-bottom:16px;}
+    .icp-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;}
+    /* GOVERNANCE */
+    .gov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+    .gov-cell{background:var(--black);padding:28px 26px;}
+    .gov-step{font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+    .gov-title{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--white);margin-bottom:8px;}
+    .gov-body{font-size:11px;color:var(--g2);line-height:1.75;}
+    /* PULL QUOTE */
+    .pull-quote{border-left:2px solid var(--gold);padding:0 0 0 36px;}
+    .pull-quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:300;color:var(--white);line-height:1.5;font-style:italic;margin-bottom:24px;}
     /* CTA BAND */
-    .cta-band{background:var(--gold);padding:80px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
-    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--black);line-height:1.1;max-width:680px;}
+    .cta-band{background:var(--gold);padding:88px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,58px);font-weight:400;color:var(--black);line-height:1.08;max-width:680px;}
     /* FOOTER */
     .footer{background:var(--surface);border-top:1px solid var(--border);}
     .footer-inner{max-width:1400px;margin:0 auto;padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
     .f-copy{font-size:11px;color:var(--g2);}
     .f-link{font-size:11px;color:var(--g1);margin-left:24px;transition:color .2s;}
     .f-link:hover{color:var(--white);}
+    /* CREDENTIAL BAR */
+    .cred-bar{background:var(--g4);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;}
+    .cred-inner{display:flex;align-items:center;gap:40px;flex-wrap:wrap;}
+    .cred-item{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--g2);}
+    .cred-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;}
     @media(max-width:1024px){
       .nav-inner{padding:0 24px;}.container{padding:0 24px;}
       .nav-links{display:none;}.nav-cta{display:none;}.mob-btn{display:flex;}
-      .svc-grid{grid-template-columns:repeat(2,1fr);}
-      .tools-grid{grid-template-columns:repeat(3,1fr);}
-      .proc-grid{grid-template-columns:repeat(2,1fr);}
-      .stats-strip{grid-template-columns:repeat(2,1fr);}
-      .ind-grid{grid-template-columns:repeat(3,1fr);}
+      .principle-strip{grid-template-columns:1fr;}
+      .two-col{grid-template-columns:1fr;}
+      .model-grid{grid-template-columns:repeat(2,1fr);}
+      .icp-grid{grid-template-columns:1fr;}
+      .gov-grid{grid-template-columns:repeat(2,1fr);}
       .pricing-grid{grid-template-columns:1fr;}
-      .comp-grid{grid-template-columns:repeat(2,1fr);}
     }
     @media(max-width:768px){
-      .svc-grid{grid-template-columns:1fr;}
-      .tools-grid{grid-template-columns:repeat(2,1fr);}
-      .proc-grid{grid-template-columns:1fr;}
-      .ind-grid{grid-template-columns:repeat(2,1fr);}
-      .comp-grid{grid-template-columns:1fr;}
+      .model-grid{grid-template-columns:1fr;}
+      .gov-grid{grid-template-columns:1fr;}
       .cta-band{padding:56px 24px;}
       .footer-inner{padding:20px 24px;}
-      .testimonial-block{padding:36px 28px;}
       section{padding:72px 0;}
+      .two-col-panel{padding:36px 28px;}
     }
     @media(prefers-reduced-motion:reduce){
       .reveal,.reveal-l{opacity:1!important;transform:none!important;transition:none!important;}
@@ -166,7 +181,6 @@
   <div class="nav-inner">
     <a href="index.html" class="logo">
       <svg width="190" height="42" viewBox="0 0 190 42" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="22" font-family="'Plus Jakarta Sans',sans-serif" font-size="22" font-weight="700" fill="#ffffff">Resonant</text><path d="M0 30 L40 30 L44 23 L50 37 L54 19 L59 30 L165 30" stroke="#C9A96E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="30" r="2.5" fill="#C9A96E"/><text x="0" y="41" font-family="'Plus Jakarta Sans',sans-serif" font-size="6.5" font-weight="500" fill="#C9A96E" letter-spacing="3">MEDIA SOLUTIONS</text></svg>
-      
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">Home</a>
@@ -175,7 +189,7 @@
         <div class="nav-dropdown-menu">
           <a href="services.html">RevOps &amp; MarTech</a>
           <a href="staff-augmentation.html">Staff Augmentation</a>
-          <a href="offshore-accounting.html" class="active">Offshore Accounting</a>
+          <a href="offshore-accounting.html" class="active">Finance Operations</a>
         </div>
       </div>
       <a href="process.html" class="nav-link">Process</a>
@@ -184,7 +198,7 @@
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <div style="display:flex;align-items:center;gap:16px;">
-      <a href="contact.html" class="nav-cta">Free Consultation</a>
+      <a href="contact.html" class="nav-cta">Request a Proposal</a>
       <button class="mob-btn" id="mob-toggle" aria-label="Open menu" aria-expanded="false">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
       </button>
@@ -203,7 +217,7 @@
       <div class="mob-svc-sub" id="mob-svc-sub">
         <a href="services.html">RevOps &amp; MarTech</a>
         <a href="staff-augmentation.html">Staff Augmentation</a>
-        <a href="offshore-accounting.html" class="active">Offshore Accounting</a>
+        <a href="offshore-accounting.html" class="active">Finance Operations</a>
       </div>
       <a href="process.html" class="mob-nav-link">Process <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="case-studies.html" class="mob-nav-link">Case Studies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -211,216 +225,308 @@
       <a href="contact.html" class="mob-nav-link">Contact <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </nav>
     <div class="mob-footer">
-      <a href="contact.html" class="btn-gold" style="justify-content:center;">Get Your Free Audit</a>
-      <span class="mob-offices">London &nbsp;·&nbsp; New York &nbsp;·&nbsp; Gurugram</span>
+      <a href="contact.html" class="btn-gold" style="justify-content:center;">Request a Proposal</a>
+      <span class="mob-offices">London &nbsp;·&nbsp; New Delhi</span>
     </div>
   </div>
 </div>
 
-<!-- PAGE HERO -->
+<!-- CREDENTIAL BAR -->
+<div class="cred-bar" style="margin-top:68px;">
+  <div class="container">
+    <div class="cred-inner">
+      <div class="cred-item"><div class="cred-dot"></div>Finance Operations Partner for Investment Firms &amp; B2B Scale-Ups</div>
+      <div class="cred-item"><div class="cred-dot"></div>Management Company Reporting</div>
+      <div class="cred-item"><div class="cred-dot"></div>Audit-Ready Financial Records</div>
+      <div class="cred-item"><div class="cred-dot"></div>London · New Delhi</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
 <div class="page-hero">
   <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
   <div class="container">
-    <div style="max-width:900px;">
+    <div style="max-width:980px;">
       <div class="rule-gold hero-anim ha1"></div>
-      <div class="eyebrow hero-anim ha1" style="margin-bottom:16px;">Offshore Accounting &amp; Bookkeeping</div>
-      <h1 style="font-size:clamp(48px,7.5vw,106px);font-weight:300;line-height:.92;letter-spacing:-.02em;margin-bottom:32px;" class="hero-anim ha2">
+      <div class="eyebrow hero-anim ha1" style="margin-bottom:20px;">Resonant Finance Operations</div>
+      <h1 style="font-size:clamp(46px,7vw,100px);font-weight:300;line-height:.92;letter-spacing:-.025em;margin-bottom:36px;" class="hero-anim ha2">
         Your numbers.<br><em style="color:var(--gold);">Always right.</em><br>Always on time.
       </h1>
-      <p style="font-size:16px;color:var(--g1);max-width:580px;line-height:1.85;margin-bottom:36px;" class="hero-anim ha3">A dedicated offshore accounting team — handling your bookkeeping, payroll, financial reporting, accounts payable and receivable — at 60–70% less than the cost of an in-house hire. Full compliance. Real-time visibility. Zero disruption.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;" class="hero-anim ha3">
-        <a href="contact.html" class="btn-gold">Get a Free Finance Audit <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="#services" class="btn-outline">See What's Included</a>
+      <p style="font-size:16px;color:var(--g1);max-width:620px;line-height:1.9;margin-bottom:14px;" class="hero-anim ha3">
+        We are not an accounting firm. We are a dedicated finance operations partner — built for investment firms, management companies, and scaling B2B organisations that need more than a bookkeeper.
+      </p>
+      <p style="font-size:14px;color:var(--g2);max-width:580px;line-height:1.85;margin-bottom:40px;" class="hero-anim ha3">
+        Structured monthly processes. Investor-grade reporting. Audit-ready records. A finance function your leadership team can rely on — every single reporting cycle.
+      </p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;" class="hero-anim ha4">
+        <a href="contact.html" class="btn-gold">Request a Proposal <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#model" class="btn-outline">See How We Work</a>
       </div>
     </div>
-    <!-- STATS -->
-    <div class="stats-strip reveal">
-      <div class="ss-cell"><div class="ss-num">70<span style="font-size:22px;color:var(--gl);">%</span></div><div class="ss-label">Average Cost Reduction</div></div>
-      <div class="ss-cell"><div class="ss-num">48<span style="font-size:22px;color:var(--gl);">hr</span></div><div class="ss-label">Onboarding Time</div></div>
-      <div class="ss-cell"><div class="ss-num">99<span style="font-size:22px;color:var(--gl);">%</span></div><div class="ss-label">Accuracy Rate Guarantee</div></div>
-      <div class="ss-cell"><div class="ss-num">100<span style="font-size:22px;color:var(--gl);">%</span></div><div class="ss-label">Cloud-Based — Real-Time</div></div>
+
+    <!-- THREE PRINCIPLES -->
+    <div class="principle-strip reveal" style="margin-top:80px;">
+      <div class="ps-cell">
+        <div class="ps-num">01 &nbsp;·&nbsp; Reliability</div>
+        <h3 class="ps-title">Accurate, reviewed, and dependable — every reporting cycle.</h3>
+        <p class="ps-body">Every financial deliverable is prepared, reviewed, and signed off before it reaches you. No shortcuts. No inconsistencies.</p>
+      </div>
+      <div class="ps-cell">
+        <div class="ps-num">02 &nbsp;·&nbsp; Visibility</div>
+        <h3 class="ps-title">Management reporting that supports real decisions.</h3>
+        <p class="ps-body">Timely, structured financial information that gives leadership the clarity to make confident operational and strategic decisions.</p>
+      </div>
+      <div class="ps-cell">
+        <div class="ps-num">03 &nbsp;·&nbsp; Scalability</div>
+        <h3 class="ps-title">Finance processes that grow with your organisation.</h3>
+        <p class="ps-body">Whether you are managing one entity or expanding a portfolio, our operating model is designed to scale without compromising quality or control.</p>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div style="margin-bottom:52px;" class="reveal">
-      <span class="eyebrow">What's Included</span>
-      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">A complete finance function.<br><em>Offshore. Managed. Accountable.</em></h2>
-    </div>
-    <div class="svc-grid">
-
-      <div class="svc-card reveal">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <div class="svc-title">Bookkeeping &amp; Ledger Management</div>
-        <div class="svc-body">Accurate, up-to-date financial records maintained daily. Your general ledger, chart of accounts, journal entries and bank reconciliations — handled end to end.</div>
-        <ul class="svc-list">
-          <li>Daily/weekly transaction categorisation</li>
-          <li>Bank &amp; credit card reconciliation</li>
-          <li>General ledger maintenance</li>
-          <li>Month-end close process</li>
-          <li>Chart of accounts structuring</li>
-        </ul>
-      </div>
-
-      <div class="svc-card reveal d1">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <div class="svc-title">Accounts Payable &amp; Receivable</div>
-        <div class="svc-body">Full AP/AR management to keep your cash flow clean, suppliers paid on time and receivables collected efficiently — with clear aging reports and escalation workflows.</div>
-        <ul class="svc-list">
-          <li>Invoice processing &amp; approval routing</li>
-          <li>Supplier payment scheduling</li>
-          <li>Customer invoicing</li>
-          <li>Aging reports &amp; collections follow-up</li>
-          <li>Cash flow forecasting support</li>
-        </ul>
-      </div>
-
-      <div class="svc-card reveal d2">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="svc-title">Payroll Processing</div>
-        <div class="svc-body">End-to-end payroll management — including salary calculations, deductions, compliance filings and payslip generation — for UK, US, Canadian and Indian entities.</div>
-        <ul class="svc-list">
-          <li>Multi-currency payroll runs</li>
-          <li>PAYE / 941 / TDS compliance</li>
-          <li>Payslip generation &amp; distribution</li>
-          <li>Pension &amp; benefits deduction handling</li>
-          <li>Year-end P60 / W-2 / T4 support</li>
-        </ul>
-      </div>
-
-      <div class="svc-card reveal">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <div class="svc-title">Financial Reporting</div>
-        <div class="svc-body">Monthly management accounts and board-ready financial reports — P&amp;L, balance sheet, cash flow statement — delivered on schedule with variance analysis and commentary.</div>
-        <ul class="svc-list">
-          <li>Profit &amp; Loss statements</li>
-          <li>Balance sheet preparation</li>
-          <li>Cash flow statements</li>
-          <li>Budget vs. actuals variance reports</li>
-          <li>KPI dashboards (Power BI / Looker)</li>
-        </ul>
-      </div>
-
-      <div class="svc-card reveal d1">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <div class="svc-title">Tax Preparation Support</div>
-        <div class="svc-body">Organised, audit-ready workpapers and tax preparation support — working alongside your local accountant or tax adviser to ensure filings are accurate and on time.</div>
-        <ul class="svc-list">
-          <li>VAT / GST / Sales Tax calculations</li>
-          <li>Corporation Tax workpaper prep</li>
-          <li>Year-end trial balance</li>
-          <li>Supporting schedules for tax filings</li>
-          <li>Liaison with external tax advisers</li>
-        </ul>
-      </div>
-
-      <div class="svc-card reveal d2">
-        <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <div class="svc-title">Virtual CFO Advisory</div>
-        <div class="svc-body">Strategic financial oversight without the full-time CFO cost. Monthly financial reviews, cash flow strategy, budget setting and growth modelling from a senior finance professional.</div>
-        <ul class="svc-list">
-          <li>Monthly CFO review calls</li>
-          <li>12-month rolling cash flow model</li>
-          <li>Pricing &amp; margin analysis</li>
-          <li>Fundraise preparation support</li>
-          <li>Board reporting pack</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TOOLS -->
-<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:48px;" class="reveal">
-      <div>
-        <span class="eyebrow">Cloud Accounting Tools</span>
-        <h2 style="font-size:clamp(30px,3.5vw,48px);font-weight:300;margin-top:10px;line-height:1.1;">We work in your stack,<br><em>or recommend the right one.</em></h2>
-      </div>
-    </div>
-    <div class="tools-grid">
-      <div class="tool-cell reveal"><div class="tool-logo">QuickBooks</div><div class="tool-type">Online / Desktop</div></div>
-      <div class="tool-cell reveal d1"><div class="tool-logo">Xero</div><div class="tool-type">Cloud Accounting</div></div>
-      <div class="tool-cell reveal d2"><div class="tool-logo">Sage</div><div class="tool-type">50 / Intacct / X3</div></div>
-      <div class="tool-cell reveal d3"><div class="tool-logo">FreshBooks</div><div class="tool-type">SME Invoicing</div></div>
-      <div class="tool-cell reveal d4"><div class="tool-logo">NetSuite</div><div class="tool-type">ERP / Enterprise</div></div>
-      <div class="tool-cell reveal"><div class="tool-logo">Zoho Books</div><div class="tool-type">Mid-Market</div></div>
-    </div>
-    <p style="font-size:12px;color:var(--g2);margin-top:20px;text-align:center;">Also supporting: Wave, FreeAgent, Kashoo, Holded, MYOB, Reckon, Brightpearl, Cin7, Unleashed and most API-connected accounting platforms.</p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
+<!-- WHO WE SERVE -->
 <section>
   <div class="container">
-    <div style="margin-bottom:52px;" class="reveal">
-      <span class="eyebrow">Onboarding Process</span>
-      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">From handover to fully operational<br><em>in 48 hours.</em></h2>
+    <div style="margin-bottom:56px;" class="reveal">
+      <span class="eyebrow">Who We Work With</span>
+      <h2 style="font-size:clamp(34px,4vw,56px);font-weight:300;margin-top:12px;line-height:1.08;">We serve organisations where<br><em>financial accuracy is non-negotiable.</em></h2>
     </div>
-    <div class="proc-grid">
-      <div class="proc-step reveal">
-        <div class="proc-n">01</div>
-        <h3 class="proc-title">Discovery &amp; Access</h3>
-        <p class="proc-body">A structured onboarding call to understand your current accounting setup, chart of accounts, payroll schedule and reporting requirements. Secure access is granted to your existing platform.</p>
+    <div class="icp-grid">
+      <div class="icp-card reveal">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="icp-title">Investment Firms &amp; Management Companies</h3>
+        <p class="icp-body">You operate a management company structure with portfolio investments. You need consistent monthly accounting, reliable management reporting, and financial records that are audit-ready at any point in the year.</p>
+        <div class="icp-tag"><span>→</span> Management accounts · Portfolio reporting · Audit support</div>
       </div>
-      <div class="proc-step reveal d1">
-        <div class="proc-n">02</div>
-        <h3 class="proc-title">Clean-Up (if required)</h3>
-        <p class="proc-body">We assess the current state of your books. Where there are historical discrepancies, misclassifications or backlog, we handle clean-up before taking over ongoing work.</p>
+      <div class="icp-card reveal d1">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3 class="icp-title">B2B Scale-Ups at Growth Stage</h3>
+        <p class="icp-body">You have outgrown your existing accounting setup. Your leadership team makes decisions on financial information that is often late, incomplete, or inconsistent. You need a structured finance function, not another freelancer.</p>
+        <div class="icp-tag"><span>→</span> Financial operations · Reporting cadence · CFO advisory</div>
       </div>
-      <div class="proc-step reveal d2">
-        <div class="proc-n">03</div>
-        <h3 class="proc-title">Handover &amp; Live Operation</h3>
-        <p class="proc-body">Your dedicated accounting specialist takes ownership of the agreed scope. Weekly/monthly deliverables are confirmed. A shared reporting schedule is established from day one.</p>
+      <div class="icp-card reveal d2">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="icp-title">Multi-Entity &amp; Complex Structures</h3>
+        <p class="icp-body">You have multiple entities — UK, US, or international — with consolidated reporting requirements. You need a finance partner who understands multi-entity structures, not a generalist who will learn on your time.</p>
+        <div class="icp-tag"><span>→</span> Multi-entity · Consolidation · Investor packs</div>
       </div>
-      <div class="proc-step reveal d3">
-        <div class="proc-n">04</div>
-        <h3 class="proc-title">Review &amp; Scale</h3>
-        <p class="proc-body">Monthly review calls with your account manager. Add-on services (CFO advisory, additional entities, payroll jurisdictions) can be introduced without additional onboarding friction.</p>
+    </div>
+    <div style="margin-top:1px;background:var(--g4);border:1px solid var(--border);border-top:none;padding:24px 32px;">
+      <p style="font-size:12px;color:var(--g2);text-align:center;">We work with organisations generating £50K+ / month. If you are at that stage and lack a structured finance function — we should talk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATING MODEL -->
+<section id="model" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;" class="reveal">
+      <div style="position:sticky;top:104px;">
+        <span class="eyebrow">The Resonant Finance Operating Model™</span>
+        <h2 style="font-size:clamp(30px,3.5vw,48px);font-weight:300;margin-top:14px;line-height:1.1;">Built for reliability.<br><em>Designed to scale.</em></h2>
+        <p style="font-size:13px;color:var(--g1);line-height:1.85;margin-top:18px;margin-bottom:28px;">Reliable financial reporting is not the result of individual effort — it is the outcome of disciplined systems, structured reviews, and consistent execution.</p>
+        <a href="contact.html" class="btn-outline">Request a Proposal <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="model-grid" style="border:none;gap:1px;background:var(--border);">
+        <div class="model-card reveal">
+          <div class="model-num">01</div>
+          <h3 class="model-title">Onboarding &amp; Finance Assessment</h3>
+          <p class="model-body">We begin by mapping your current finance structure, reporting requirements, and key stakeholders — establishing a clear operational framework before any work begins.</p>
+          <ul class="model-list">
+            <li>Chart of accounts &amp; systems review</li>
+            <li>Reporting calendar setup</li>
+            <li>Responsibility matrix</li>
+          </ul>
+        </div>
+        <div class="model-card reveal d1">
+          <div class="model-num">02</div>
+          <h3 class="model-title">Monthly Finance Operations</h3>
+          <p class="model-body">Day-to-day finance management executed to a documented process — ledger maintenance, reconciliations, AP/AR, and month-end close, every cycle without exception.</p>
+          <ul class="model-list">
+            <li>GL maintenance &amp; journal entries</li>
+            <li>Bank &amp; balance sheet reconciliations</li>
+            <li>AP &amp; AR management</li>
+          </ul>
+        </div>
+        <div class="model-card reveal d2">
+          <div class="model-num">03</div>
+          <h3 class="model-title">Financial Review &amp; Quality Assurance</h3>
+          <p class="model-body">Every deliverable passes a structured two-level review before it reaches you. Completeness, accuracy, reconciliation checks, and exception identification — built in, not bolted on.</p>
+          <ul class="model-list">
+            <li>Two-level sign-off process</li>
+            <li>Exception &amp; variance review</li>
+            <li>Zero unreviewed submissions</li>
+          </ul>
+        </div>
+        <div class="model-card reveal">
+          <div class="model-num">04</div>
+          <h3 class="model-title">Management &amp; Investor Reporting</h3>
+          <p class="model-body">Decision-ready financial reports delivered on schedule — P&amp;L, Balance Sheet, Cash Flow, KPI reporting, and management commentary aligned to your reporting calendar.</p>
+          <ul class="model-list">
+            <li>Monthly management accounts</li>
+            <li>Investor &amp; board reporting packs</li>
+            <li>Variance analysis &amp; commentary</li>
+          </ul>
+        </div>
+        <div class="model-card reveal d1">
+          <div class="model-num">05</div>
+          <h3 class="model-title">Audit Coordination &amp; Compliance</h3>
+          <p class="model-body">We maintain audit-ready documentation throughout the year, coordinating with your appointed audit firm to make the audit process smoother and less disruptive. We do not provide audit opinions.</p>
+          <ul class="model-list">
+            <li>Audit schedules &amp; working papers</li>
+            <li>Auditor query responses</li>
+            <li>Year-round readiness</li>
+          </ul>
+        </div>
+        <div class="model-card reveal d2">
+          <div class="model-num">06</div>
+          <h3 class="model-title">Continuous Improvement</h3>
+          <p class="model-body">Every engagement is reviewed quarterly. We evaluate reporting effectiveness, strengthen controls, refine workflows, and ensure the finance operation scales as your organisation grows.</p>
+          <ul class="model-list">
+            <li>Quarterly strategic review</li>
+            <li>Process &amp; control optimisation</li>
+            <li>Portfolio growth scalability</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPLIANCE -->
+<!-- FLOW DIAGRAM + SCOPE -->
+<section>
+  <div class="container">
+    <div class="two-col reveal">
+      <!-- Left: Flow -->
+      <div class="two-col-panel">
+        <span class="eyebrow">The Finance Operations Cycle</span>
+        <h2 style="font-size:clamp(28px,3vw,42px);font-weight:300;margin-top:12px;margin-bottom:36px;line-height:1.15;">From transactions<br><em>to confident decisions.</em></h2>
+        <div class="flow-chain">
+          <div class="flow-node">
+            <div class="flow-node-num">01</div>
+            <div><div class="flow-node-label">Transactions</div><div class="flow-node-sub">Source documents · Bank data · Invoices</div></div>
+          </div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">
+            <div class="flow-node-num">02</div>
+            <div><div class="flow-node-label">Monthly Close</div><div class="flow-node-sub">Processing · Reconciliation · Journal entries</div></div>
+          </div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">
+            <div class="flow-node-num">03</div>
+            <div><div class="flow-node-label">Financial Review</div><div class="flow-node-sub">Quality assurance · Two-level sign-off</div></div>
+          </div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">
+            <div class="flow-node-num">04</div>
+            <div><div class="flow-node-label">Management Reports</div><div class="flow-node-sub">P&amp;L · Balance Sheet · Cash Flow · KPIs</div></div>
+          </div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">
+            <div class="flow-node-num">05</div>
+            <div><div class="flow-node-label">Investor Reporting</div><div class="flow-node-sub">Board packs · Stakeholder communications</div></div>
+          </div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node">
+            <div class="flow-node-num">06</div>
+            <div><div class="flow-node-label">Audit Support</div><div class="flow-node-sub">Working papers · Auditor coordination</div></div>
+          </div>
+          <div class="flow-arrow gold-arrow"></div>
+          <div class="flow-node highlight">
+            <div class="flow-node-num">✓</div>
+            <div><div class="flow-node-label">Confident Decisions</div><div class="flow-node-sub">Leadership clarity · Strategic growth</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Scope -->
+      <div class="two-col-panel" style="background:var(--surface);">
+        <span class="eyebrow">Scope of Service</span>
+        <h2 style="font-size:clamp(28px,3vw,42px);font-weight:300;margin-top:12px;margin-bottom:36px;line-height:1.15;">Everything your finance<br><em>function needs.</em></h2>
+        <table class="scope-table">
+          <tr>
+            <td>Bookkeeping</td>
+            <td>General Ledger maintenance, journal entries, chart of accounts management, daily/weekly transaction processing</td>
+          </tr>
+          <tr>
+            <td>Bank Reconciliation</td>
+            <td>Full reconciliation of all bank accounts and credit facilities, balance sheet reconciliations</td>
+          </tr>
+          <tr>
+            <td>AP &amp; AR</td>
+            <td>Invoice processing, supplier payment scheduling, customer invoicing, aging reports, collections support</td>
+          </tr>
+          <tr>
+            <td>Month-End Close</td>
+            <td>Structured close process following a documented internal checklist, with review sign-off before completion</td>
+          </tr>
+          <tr>
+            <td>Management Reporting</td>
+            <td>Monthly P&amp;L, Balance Sheet, Cash Flow Statement, KPI reporting, variance analysis and management commentary</td>
+          </tr>
+          <tr>
+            <td>Quarterly Reporting</td>
+            <td>Board and investor reporting packs, supporting schedules, and audit-ready working papers</td>
+          </tr>
+          <tr>
+            <td>Audit Coordination</td>
+            <td>Preparation of audit schedules, coordination with external auditors, response to auditor queries</td>
+          </tr>
+          <tr>
+            <td>Governance &amp; Reviews</td>
+            <td>Monthly operational review meetings, quarterly strategic review, continuous improvement planning</td>
+          </tr>
+        </table>
+        <div style="margin-top:28px;padding:20px 24px;background:var(--g4);border-left:2px solid var(--gold);">
+          <p style="font-size:11px;color:var(--g2);line-height:1.7;">Additional services — payroll, CFO advisory, multi-entity consolidation, financial modelling — are available as extensions to any engagement and priced collaboratively based on scope.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY GOVERNANCE -->
 <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
     <div style="margin-bottom:52px;" class="reveal">
-      <span class="eyebrow">Compliance &amp; Security</span>
-      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">Your data is safe.<br><em>Your filings are compliant.</em></h2>
+      <span class="eyebrow">Delivery Governance</span>
+      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:12px;line-height:1.08;">Structure and accountability,<br><em>built into every engagement.</em></h2>
     </div>
-    <div class="comp-grid">
-      <div class="comp-cell reveal">
-        <div class="comp-badge"><div class="comp-dot"></div><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);">UK</span></div>
-        <div class="comp-label">UK Compliance</div>
-        <div class="comp-detail">Companies House reporting, HMRC VAT returns, Making Tax Digital (MTD) compliant processes, PAYE and auto-enrolment pension management.</div>
+    <div class="gov-grid reveal">
+      <div class="gov-cell">
+        <div class="gov-step">Stage 1</div>
+        <h3 class="gov-title">Preparation</h3>
+        <p class="gov-body">Assigned finance professional completes all accounting work against documented internal procedures and the agreed reporting calendar.</p>
       </div>
-      <div class="comp-cell reveal d1">
-        <div class="comp-badge"><div class="comp-dot"></div><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);">US</span></div>
-        <div class="comp-label">US Compliance</div>
-        <div class="comp-detail">IRS-aligned bookkeeping, Form 941 payroll tax deposits, multi-state sales tax awareness and W-2/1099 year-end preparation support.</div>
+      <div class="gov-cell">
+        <div class="gov-step">Stage 2</div>
+        <h3 class="gov-title">Engagement Lead Review</h3>
+        <p class="gov-body">Your Engagement Lead reviews every deliverable for completeness, accuracy, and consistency before it progresses further.</p>
       </div>
-      <div class="comp-cell reveal d2">
-        <div class="comp-badge"><div class="comp-dot"></div><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);">CA</span></div>
-        <div class="comp-label">Canada Compliance</div>
-        <div class="comp-detail">CRA-compliant bookkeeping, HST/GST remittances, T4/T4A year-end payroll filings and payroll deduction remittances for federal and provincial requirements.</div>
+      <div class="gov-cell">
+        <div class="gov-step">Stage 3</div>
+        <h3 class="gov-title">Exception Review</h3>
+        <p class="gov-body">Where required, a senior-level exception review is conducted to address variances, anomalies, or complex reporting considerations.</p>
       </div>
-      <div class="comp-cell reveal d3">
-        <div class="comp-badge"><div class="comp-dot"></div><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);">IN</span></div>
-        <div class="comp-label">India Compliance</div>
-        <div class="comp-detail">GST filings (GSTR-1, GSTR-3B), TDS deduction and deposit, PF/ESI compliance, Income Tax Act-aligned bookkeeping and MCA filings support.</div>
+      <div class="gov-cell">
+        <div class="gov-step">Stage 4</div>
+        <h3 class="gov-title">Submission to Client</h3>
+        <p class="gov-body">Only after all review stages are complete is the deliverable submitted to your team — with full documentation and a concise commentary where applicable.</p>
       </div>
     </div>
-    <div style="margin-top:1px;border:1px solid var(--border);border-top:none;background:var(--black);padding:24px 32px;display:flex;gap:48px;flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span style="font-size:11px;color:var(--g1);">256-bit encrypted data transfer</span></div>
-      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span style="font-size:11px;color:var(--g1);">Role-based access control — minimum data exposure</span></div>
-      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:11px;color:var(--g1);">Signed NDA with all team members</span></div>
-      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span style="font-size:11px;color:var(--g1);">Zero tolerance for deadline breaches</span></div>
+    <div style="margin-top:1px;background:var(--black);border:1px solid var(--border);border-top:none;padding:28px 36px;display:flex;gap:48px;flex-wrap:wrap;align-items:center;">
+      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span style="font-size:11px;color:var(--g1);">Signed NDA with all team members</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span style="font-size:11px;color:var(--g1);">Role-based access · minimum data exposure</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:11px;color:var(--g1);">Dedicated engagement lead — single point of contact</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span style="font-size:11px;color:var(--g1);">Business continuity — team-based delivery, not single-person dependency</span></div>
     </div>
   </div>
 </section>
@@ -428,101 +534,139 @@
 <!-- PRICING -->
 <section>
   <div class="container">
-    <div style="margin-bottom:52px;" class="reveal">
+    <div style="margin-bottom:56px;" class="reveal">
       <span class="eyebrow">Engagement Tiers</span>
-      <h2 style="font-size:clamp(34px,4vw,54px);font-weight:300;margin-top:10px;line-height:1.1;">Transparent pricing.<br><em>No surprises.</em></h2>
+      <h2 style="font-size:clamp(34px,4vw,56px);font-weight:300;margin-top:12px;line-height:1.08;">Transparent investment.<br><em>No surprises. No hourly billing.</em></h2>
+      <p style="font-size:14px;color:var(--g2);margin-top:16px;max-width:560px;line-height:1.8;">Investment starting from USD 3,250 / month, subject to confirmation of final scope during onboarding. Choose the tier that reflects your current structure — scale as your organisation grows.</p>
     </div>
     <div class="pricing-grid">
+
+      <!-- Foundation -->
       <div class="price-card reveal">
-        <div class="price-tier">Essentials</div>
-        <div class="price-val">From <span style="font-size:28px;">£</span>499</div>
-        <div class="price-period">per month · single entity</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly bookkeeping (up to 200 transactions)</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Bank reconciliation</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly P&amp;L and balance sheet</div>
-        <div class="price-feat"><span class="pf-tick">→</span>VAT / GST return preparation</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Quarterly review call</div>
-        <div style="margin-top:28px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Get Started</a></div>
+        <div class="price-tier">Foundation</div>
+        <div class="price-name">Management Company</div>
+        <div class="price-val"><sup>$</sup>2,500</div>
+        <div class="price-period">per month · billed monthly in advance</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Monthly bookkeeping &amp; General Ledger maintenance</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Bank reconciliations</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Month-end close process</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Monthly P&amp;L, Balance Sheet, Cash Flow</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Quarterly reporting support</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Dedicated Engagement Lead</div>
+        <div style="margin-top:32px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Request Proposal</a></div>
       </div>
-      <div class="price-card reveal d1" style="border:1px solid rgba(201,169,110,.3);position:relative;">
-        <div style="position:absolute;top:0;right:0;background:var(--gold);color:#000;font-size:9px;font-weight:600;letter-spacing:.1em;padding:5px 12px;text-transform:uppercase;">Most Popular</div>
+
+      <!-- Growth (featured) -->
+      <div class="price-card featured reveal d1">
+        <div class="price-badge">Recommended</div>
         <div class="price-tier">Growth</div>
-        <div class="price-val">From <span style="font-size:28px;">£</span>999</div>
-        <div class="price-period">per month · single entity</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Full bookkeeping (unlimited transactions)</div>
-        <div class="price-feat"><span class="pf-tick">→</span>AP &amp; AR management</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Payroll processing (up to 20 employees)</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly management accounts pack</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Tax preparation workpapers</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly review call with senior accountant</div>
-        <div style="margin-top:28px;"><a href="contact.html" class="btn-gold" style="width:100%;justify-content:center;">Get Started</a></div>
+        <div class="price-name">Management + Portfolio</div>
+        <div class="price-val"><sup>$</sup>3,250</div>
+        <div class="price-period">per month · billed monthly in advance</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Everything in Foundation</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Accounts Payable &amp; Receivable management</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Portfolio company accounting support</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Investor &amp; board reporting packs</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Audit coordination &amp; working papers</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Monthly strategic review meeting</div>
+        <div style="margin-top:32px;"><a href="contact.html" class="btn-gold" style="width:100%;justify-content:center;">Request Proposal</a></div>
       </div>
+
+      <!-- Enterprise -->
       <div class="price-card reveal d2">
         <div class="price-tier">Enterprise</div>
-        <div class="price-val" style="font-size:36px;">Custom</div>
-        <div class="price-period">multi-entity · complex structure</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Multi-entity / multi-currency consolidation</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Full AP/AR &amp; payroll management</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Board reporting pack</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Virtual CFO monthly advisory</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Fundraise &amp; audit preparation support</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Dedicated senior account manager</div>
-        <div style="margin-top:28px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Talk to Us</a></div>
+        <div class="price-name">Multi-Entity</div>
+        <div class="price-val" style="font-size:38px;line-height:1.2;padding-top:8px;">Custom</div>
+        <div class="price-period">multi-entity · complex reporting structures</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Everything in Growth</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Multi-entity consolidation</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Multi-currency reporting</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Virtual CFO advisory</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Budgeting, forecasting &amp; financial modelling</div>
+        <div class="price-feat"><span class="pf-tick">→</span>Dedicated senior finance team</div>
+        <div style="margin-top:32px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Talk to Us</a></div>
       </div>
+
     </div>
-    <p style="font-size:11px;color:var(--g2);margin-top:20px;text-align:center;">All prices exclude VAT. Final price depends on transaction volume, payroll headcount and entity complexity. Free assessment included.</p>
+    <p style="font-size:11px;color:var(--g2);margin-top:20px;text-align:center;">All prices in USD. Excludes applicable taxes. Final scope confirmed during onboarding — no hidden charges, no hourly billing, no surprise invoices.</p>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- PULL QUOTE -->
 <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="container">
-    <div class="testimonial-block reveal">
-      <div class="t-quote">"We handed over our books in January — by February we had our first clean management accounts in three years. The offshore team understood our Xero setup within 48 hours and we've never had a late VAT return since. The cost saving alone paid for six months of the service."</div>
-      <div class="t-attr">
-        <div class="t-line"></div>
-        <div>
-          <div style="font-size:13px;font-weight:500;color:var(--white);">Marcus Thornton</div>
-          <div style="font-size:11px;color:var(--g2);letter-spacing:.06em;text-transform:uppercase;margin-top:2px;">Managing Director — Thornton Group, London</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="reveal">
+      <div class="pull-quote">
+        <blockquote>"Our objective is simple: to become a trusted extension of your finance function — enabling your leadership team to focus on growth while knowing the financial operations are structured, dependable, and professionally managed."</blockquote>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:32px;height:1px;background:var(--gold);"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--white);">Aman Sharma</div>
+            <div style="font-size:11px;color:var(--g2);letter-spacing:.06em;text-transform:uppercase;margin-top:2px;">Founder — Resonant Finance Operations</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow">Our Commercial Philosophy</span>
+        <p style="font-size:15px;color:var(--g1);line-height:1.9;margin-top:16px;margin-bottom:20px;">We believe commercial relationships should be transparent, predictable, and aligned with long-term partnership — not transactional service delivery.</p>
+        <p style="font-size:14px;color:var(--g2);line-height:1.85;margin-bottom:28px;">Trust is not built through presentations. It is built through consistent execution, proactive communication, and the kind of financial accuracy that lets your leadership team make decisions with confidence.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;"></div><span style="font-size:12px;color:var(--g1);">12-month engagement · no rolling uncertainty</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;"></div><span style="font-size:12px;color:var(--g1);">No hourly billing · no scope creep surprises</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;"></div><span style="font-size:12px;color:var(--g1);">Additional services scoped and agreed in writing before commencement</span></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;"></div><span style="font-size:12px;color:var(--g1);">Quarterly strategic reviews — your partnership should always be improving</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INDUSTRIES -->
+<!-- NEXT STEPS -->
 <section>
   <div class="container">
-    <div style="margin-bottom:40px;" class="reveal">
-      <span class="eyebrow">Industries We Support</span>
-      <h2 style="font-size:clamp(30px,3.5vw,48px);font-weight:300;margin-top:10px;line-height:1.1;">Finance expertise across<br><em>every sector.</em></h2>
+    <div style="margin-bottom:52px;" class="reveal">
+      <span class="eyebrow">How We Begin</span>
+      <h2 style="font-size:clamp(34px,4vw,56px);font-weight:300;margin-top:12px;line-height:1.08;">From first conversation<br><em>to fully operational.</em></h2>
     </div>
-    <div class="ind-grid">
-      <div class="ind-cell reveal"><div class="ind-name">SaaS &amp; Technology</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d1"><div class="ind-name">Construction</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d2"><div class="ind-name">D2C &amp; E-commerce</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d3"><div class="ind-name">Professional Services</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d4"><div class="ind-name">Healthcare &amp; MedTech</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal"><div class="ind-name">Real Estate &amp; Property</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d1"><div class="ind-name">Automotive</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d2"><div class="ind-name">Education &amp; Training</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d3"><div class="ind-name">Import &amp; Export</div><div class="ind-line"></div></div>
-      <div class="ind-cell reveal d4"><div class="ind-name">Legal &amp; Compliance</div><div class="ind-line"></div></div>
+    <div class="proc-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);">
+      <div style="background:var(--black);padding:36px 30px;" class="reveal">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:18px;">01</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px;">Initial Conversation</h3>
+        <p style="font-size:12px;color:var(--g1);line-height:1.85;">We understand your current finance structure, reporting requirements, and what a successful long-term partnership looks like for your organisation.</p>
+      </div>
+      <div style="background:var(--black);padding:36px 30px;" class="reveal d1">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:18px;">02</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px;">Proposal &amp; Scope</h3>
+        <p style="font-size:12px;color:var(--g1);line-height:1.85;">We prepare a tailored engagement proposal — scope, pricing, governance structure, and a 90-day implementation roadmap specific to your organisation.</p>
+      </div>
+      <div style="background:var(--black);padding:36px 30px;" class="reveal d2">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:18px;">03</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px;">Agreement &amp; Access</h3>
+        <p style="font-size:12px;color:var(--g1);line-height:1.85;">NDA, Statement of Work, and MSA signed. Secure system access granted. Kick-off meeting with your dedicated Engagement Lead and finance team.</p>
+      </div>
+      <div style="background:var(--black);padding:36px 30px;" class="reveal d3">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--g3);line-height:1;margin-bottom:18px;">04</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--white);margin-bottom:10px;">Fully Operational</h3>
+        <p style="font-size:12px;color:var(--g1);line-height:1.85;">Within 90 days, your finance function is running to a documented process — consistent reporting, structured review cycles, and a partnership built for the long term.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <div class="cta-band reveal">
-  <h2>Clean books. Real-time reporting. 70% cost saving.</h2>
-  <a href="contact.html" class="btn-black">Book a Free Finance Assessment <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  <div>
+    <h2>Ready to build a finance function<br>your leadership team can rely on?</h2>
+    <p style="font-size:14px;color:rgba(0,0,0,.6);margin-top:12px;font-family:'Plus Jakarta Sans',sans-serif;">We work with a select number of organisations. Engagements begin with a conversation.</p>
+  </div>
+  <a href="contact.html" class="btn-black">Request a Proposal <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <a href="index.html" class="logo"><svg width="24" height="24" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" fill="#C9A96E"/><path d="M8 24V8h9.333C19.807 8 22 10.193 22 12.889c0 1.872-1.04 3.506-2.587 4.334L22.5 24H18.7l-2.7-6.222H11.5V24H8zm3.5-9.333h5.778c.736 0 1.333-.597 1.333-1.334 0-.736-.597-1.333-1.333-1.333H11.5v2.667z" fill="#000"/></svg><span class="logo-text" style="font-size:12px;">Resonant</span></a>
-    <span class="f-copy">© 2025 Resonant Media Solutions Ltd.</span>
+    <span class="f-copy">© 2025 Resonant Media Solutions Ltd. · London · New Delhi</span>
     <div>
       <a href="services.html" class="f-link">Services</a>
       <a href="staff-augmentation.html" class="f-link">Staff Augmentation</a>
