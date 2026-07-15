@@ -107,19 +107,6 @@
     .scope-table td{padding:14px 0;font-size:12px;vertical-align:top;}
     .scope-table td:first-child{color:var(--gold);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;min-width:180px;padding-right:24px;}
     .scope-table td:last-child{color:var(--g1);line-height:1.7;}
-    /* PRICING */
-    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .price-card{background:var(--black);padding:44px 40px;}
-    .price-card.featured{background:var(--surface);border:1px solid rgba(201,169,110,.3);position:relative;}
-    .price-badge{position:absolute;top:0;right:0;background:var(--gold);color:#000;font-size:9px;font-weight:700;letter-spacing:.12em;padding:5px 14px;text-transform:uppercase;}
-    .price-tier{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:400;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;}
-    .price-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);margin-bottom:20px;}
-    .price-val{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--white);line-height:1;}
-    .price-val sup{font-size:22px;vertical-align:top;margin-top:10px;color:var(--gold);}
-    .price-period{font-size:11px;color:var(--g2);letter-spacing:.06em;margin-top:6px;margin-bottom:28px;}
-    .price-feat{font-size:12px;color:var(--g1);padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:flex-start;line-height:1.55;}
-    .price-feat:last-of-type{border-bottom:none;}
-    .pf-tick{color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px;}
     /* ICP */
     .icp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
     .icp-card{background:var(--black);padding:36px 32px;transition:background .2s;}
@@ -528,67 +515,6 @@
       <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg><span style="font-size:11px;color:var(--g1);">Dedicated engagement lead — single point of contact</span></div>
       <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span style="font-size:11px;color:var(--g1);">Business continuity — team-based delivery, not single-person dependency</span></div>
     </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section>
-  <div class="container">
-    <div style="margin-bottom:56px;" class="reveal">
-      <span class="eyebrow">Engagement Tiers</span>
-      <h2 style="font-size:clamp(34px,4vw,56px);font-weight:300;margin-top:12px;line-height:1.08;">Transparent investment.<br><em>No surprises. No hourly billing.</em></h2>
-      <p style="font-size:14px;color:var(--g2);margin-top:16px;max-width:560px;line-height:1.8;">Investment starting from USD 3,250 / month, subject to confirmation of final scope during onboarding. Choose the tier that reflects your current structure — scale as your organisation grows.</p>
-    </div>
-    <div class="pricing-grid">
-
-      <!-- Foundation -->
-      <div class="price-card reveal">
-        <div class="price-tier">Foundation</div>
-        <div class="price-name">Management Company</div>
-        <div class="price-val"><sup>$</sup>2,500</div>
-        <div class="price-period">per month · billed monthly in advance</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly bookkeeping &amp; General Ledger maintenance</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Bank reconciliations</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Month-end close process</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly P&amp;L, Balance Sheet, Cash Flow</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Quarterly reporting support</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Dedicated Engagement Lead</div>
-        <div style="margin-top:32px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Request Proposal</a></div>
-      </div>
-
-      <!-- Growth (featured) -->
-      <div class="price-card featured reveal d1">
-        <div class="price-badge">Recommended</div>
-        <div class="price-tier">Growth</div>
-        <div class="price-name">Management + Portfolio</div>
-        <div class="price-val"><sup>$</sup>3,250</div>
-        <div class="price-period">per month · billed monthly in advance</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Everything in Foundation</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Accounts Payable &amp; Receivable management</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Portfolio company accounting support</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Investor &amp; board reporting packs</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Audit coordination &amp; working papers</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Monthly strategic review meeting</div>
-        <div style="margin-top:32px;"><a href="contact.html" class="btn-gold" style="width:100%;justify-content:center;">Request Proposal</a></div>
-      </div>
-
-      <!-- Enterprise -->
-      <div class="price-card reveal d2">
-        <div class="price-tier">Enterprise</div>
-        <div class="price-name">Multi-Entity</div>
-        <div class="price-val" style="font-size:38px;line-height:1.2;padding-top:8px;">Custom</div>
-        <div class="price-period">multi-entity · complex reporting structures</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Everything in Growth</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Multi-entity consolidation</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Multi-currency reporting</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Virtual CFO advisory</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Budgeting, forecasting &amp; financial modelling</div>
-        <div class="price-feat"><span class="pf-tick">→</span>Dedicated senior finance team</div>
-        <div style="margin-top:32px;"><a href="contact.html" class="btn-outline" style="width:100%;justify-content:center;">Talk to Us</a></div>
-      </div>
-
-    </div>
-    <p style="font-size:11px;color:var(--g2);margin-top:20px;text-align:center;">All prices in USD. Excludes applicable taxes. Final scope confirmed during onboarding — no hidden charges, no hourly billing, no surprise invoices.</p>
   </div>
 </section>
 
